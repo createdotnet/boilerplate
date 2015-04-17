@@ -1,0 +1,43 @@
+/* ================ //
+// MIXIN: FONT SIZE //
+// ================ */
+
+
+/*
+// Behavior: Set the font size using rem values including a px fallback for browsers that don’t yet support this feature.
+// Dependencies: $base-font-size variable being set in variables.scss or variables-user.scss
+// Browser Support: http://caniuse.com/#feat=rem
+// Further Reading: http://snook.ca/archives/html_and_css/font-size-with-rem
+*/
+
+
+/*
+// Usage:
+
+// Source SCSS
+
+$base-font-size: 16px;
+
+.your-class-name {
+
+	@include font-size(50px);
+}
+
+// Compiled CSS
+
+.your-class-name {
+
+	font-size: 50px;
+	font-size: 3.125rem; // (16px / 50px) * 1rem
+}
+
+*/
+
+
+@mixin font-size($font-size) {
+
+	// Initial value set in px, fallback for browsers that don’t support REM
+	font-size: $font-size;
+	// REM calculated value
+	font-size: ($font-size / $base-font-size) * 1rem;
+}
