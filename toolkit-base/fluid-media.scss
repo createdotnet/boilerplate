@@ -14,7 +14,8 @@
 img,
 embed,
 object,
-video {
+video,
+input[type="image"] {
 
 	max-width: 100%;
 	height: auto;
