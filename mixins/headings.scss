@@ -1,0 +1,46 @@
+
+// Headings Mixin
+
+$increment: 8px;
+
+.content-block--heading {
+
+	.heading {
+		font-size: 100%;
+		line-height: 1.5em;
+	}
+
+	.sub-heading {
+		font-size: 60%;
+		line-height: 1.5em;
+	}
+}
+
+@mixin heading-size(){
+	
+}
+
+h1,
+.alpha {
+	font-size: $base-font-size + ($increment * 6);
+}
+h2,
+.beta {
+	font-size: $base-font-size + ($increment * 5);
+}
+h3,
+.gamma {
+	font-size: $base-font-size + ($increment * 4);
+}
+h4,
+.delta {
+	font-size: $base-font-size + ($increment * 3);
+}
+h5,
+.epsilon  {
+	font-size: $base-font-size + ($increment * 2);
+}
+h6,
+.zeta {
+	font-size: $base-font-size + ($increment * 1);
+}
