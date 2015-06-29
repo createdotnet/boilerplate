@@ -2,6 +2,7 @@
 // Headings Mixin
 //
 // Creates a typographic scale for headings using a 'perfect fourth' ratio.
+// If we didn't want a 'large', 'medium', 'small' option, we could just use rem's and em's. O well.
 
 @mixin heading-size( $base-size: $base-font-size ){
 
@@ -24,26 +25,26 @@
 
 	h1,
 	.alpha {
-		font-size: $base-size * 3.157;
+		font-size: round( $base-size * 3.157 );
 	}
 	h2,
 	.beta {
-		font-size: $base-size * 2.369;
+		font-size: round( $base-size * 2.369 );
 	}
 	h3,
 	.gamma {
-		font-size: $base-size * 1.777;
+		font-size: round( $base-size * 1.777 );
 	}
 	h4,
 	.delta {
-		font-size: $base-size * 1.333;
+		font-size: round( $base-size * 1.333 );
 	}
 	h5,
 	.epsilon  {
-		font-size: $base-size * 1.166;
+		font-size: round( $base-size * 1.166 );
 	}
 	h6,
 	.zeta {
-		font-size: $base-size * 1;
+		font-size: round( $base-size * 1 );
 	}
 }
