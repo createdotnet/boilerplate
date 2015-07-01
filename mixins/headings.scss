@@ -51,7 +51,7 @@ $perfect-fifth: (
 	.heading {
 		margin-top: 0;
 		margin-bottom: ($base-font-size * .2); // rem fallback
-		margin-bottom: .2rem;
+		margin-bottom: .5rem;
 	}
 
 	@each $heading, $size in $scale {
