@@ -57,24 +57,19 @@ $heading--x-large: (
 
 @mixin heading-size( $scale: $heading--small ){
 
-	.heading {
-		margin-top: 0;
-		margin-bottom: ($base-font-size * .2); // rem fallback
-		margin-bottom: .5em;
-		line-height: 1.2; // override the @mixin font-size
-	}
-
 	@each $heading, $size in $scale {
 
 		.heading--#{$heading} {
 
 			@include font-size( $base-font-size * $size );
 
-			// Reduce the font size on smaller screens
-			// @include mq($lap-mid-start, max) {
-			// 	@include font-size( ($base-font-size * $size) / 1.3 );
-			// }
 		}
-	}
+		
+	} // end @each
+} // end @mixin
 
+.heading {
+	margin-top: 0;
+	margin-bottom: .5em;
+	line-height: 1.2; // override the font-size mixin
 }
