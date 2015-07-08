@@ -55,6 +55,12 @@ $heading--x-large: (
 );
 
 
+.heading {
+	margin-top: 0;
+	margin-bottom: .5em;
+	line-height: 1.2;
+}
+
 @mixin heading-size( $scale: $heading--small ){
 
 	@each $heading, $size in $scale {
@@ -67,9 +73,3 @@ $heading--x-large: (
 
 	} // end @each
 } // end @mixin
-
-.heading {
-	margin-top: 0;
-	margin-bottom: .5em;
-	line-height: 1.2; // override the font-size mixin
-}
