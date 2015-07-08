@@ -61,10 +61,10 @@ $heading--x-large: (
 
 		.heading--#{$heading} {
 
-			@include font-size( $base-font-size * $size );
+			@include font-size( $base-font-size * $size, $line-height:false );
 
 		}
-		
+
 	} // end @each
 } // end @mixin
 
