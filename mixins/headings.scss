@@ -2,10 +2,10 @@
 // Headings Mixin
 //
 // Creates a typographic scale for headings using a choice of typographic scales, taken from http://type-scale.com/
-// Example Usage: @include heading-size($perfect-fifth);
+// Example Usage: @include heading-size( $heading--med );
 
-// x-small
-$major-second: (
+// major-second
+$heading--x-small: (
 	alpha: 1.602,
 	beta: 1.424,
 	gamma: 1.266,
@@ -14,9 +14,18 @@ $major-second: (
 	zeta: 1
 );
 
+// minor-third
+$heading--small: (
+	alpha: 2.074,
+	beta: 1.728,
+	gamma: 1.44,
+	delta: 1.2,
+	epsilon: 1.1,
+	zeta: 1
+);
 
-// small ( Current )
-$major-third: (
+// major-third
+$heading--med: (
 	alpha: 2.441,
 	beta: 1.953,
 	gamma: 1.563,
@@ -25,8 +34,8 @@ $major-third: (
 	zeta: 1
 );
 
-// Med
-$perfect-fourth: (
+// perfect-fourth
+$heading--large: (
 	alpha: 3.157,
 	beta: 2.369,
 	gamma: 1.777,
@@ -35,8 +44,8 @@ $perfect-fourth: (
 	zeta: 1
 );
 
-// Large
-$perfect-fifth: (
+// perfect-fifth
+$heading--x-large: (
 	alpha: 5.063,
 	beta: 3.375,
 	gamma: 2.25,
@@ -46,7 +55,7 @@ $perfect-fifth: (
 );
 
 
-@mixin heading-size( $scale: $major-third ){
+@mixin heading-size( $scale: $heading--small ){
 
 	.heading {
 		margin-top: 0;
@@ -57,7 +66,13 @@ $perfect-fifth: (
 	@each $heading, $size in $scale {
 
 		.heading--#{$heading} {
+
 			@include font-size( $base-font-size * $size );
+
+			// Reduce the font size on smaller screens
+			@include mq($lap-mid-start, max) {
+				@include font-size( ($base-font-size * $size) / 1.3 );
+			}
 		}
 	}
 
