@@ -61,13 +61,14 @@ $heading--x-large: (
 	line-height: 1.2;
 }
 
+
 @mixin heading-size( $scale: $heading--small ){
 
 	@each $heading, $size in $scale {
 
 		.heading--#{$heading} {
 
-			@include font-size( $base-font-size * $size, $line-height:false );
+			font-size: $size * 1em;
 
 		}
 
