@@ -34,10 +34,14 @@ $base-font-size: 16px;
 */
 
 
-@mixin font-size($font-size) {
+@mixin font-size($font-size, $line-height:true) {
 
 	// Initial value set in px, fallback for browsers that don’t support REM
 	font-size: $font-size;
 	// REM calculated value
 	font-size: ($font-size / $base-font-size) * 1rem;
+
+    @if $line-height == true{
+        line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
 }
