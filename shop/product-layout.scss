@@ -1,0 +1,118 @@
+
+// These used to be inline in the html, as of WDK version 1.2 you will need to include them in your own CSS or roll your own.
+// They are included by default in the boilerplate setup but you can set this variable to 'false'.
+
+@if $shop-product-default-styles == true {
+
+	// Product Layout 10
+	.product--image-narrow {
+
+		.product-item__gallery {
+			padding-right: 18px;
+		}
+		.product-item__details {
+			margin-top: 0;
+			margin-bottom: 2em;
+		}
+		.product-item__gallery {
+			border-right-style: solid;
+			border-right-width: 1px;
+		}
+		.product-item__gallery__image-list {
+			margin-bottom: 0;
+		}
+		.product-item__gallery__image-list,
+		.product-item__details {
+			padding-left: 0;
+			list-style: none;
+		}
+	}
+
+	// Product Layout 11
+	.product--image-wide {
+
+		.product-item__gallery__image-list,
+		.product-item__details {
+			padding-left: 0;
+			list-style: none;
+			margin-bottom: 2em;
+		}
+		.product-item__details {
+			margin-bottom: 0;
+		}
+		.product-item__details li:last-child {
+			margin-bottom: 0;
+		}
+		.wdk_product-basket-info {
+			text-align: right;
+		}
+	}
+
+	// Styles for both layout 10 and 11
+	.product h3 {
+		margin-top: 0;
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+	.product-item__gallery__image-list {
+		margin-left: -0.5em;
+		text-align: center;
+	}
+	.product-item__gallery__image-main .product-item__gallery__image-wrapper {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.product-item__gallery__image-main .photo {
+		max-width: 100%;
+		max-height: 400px;
+		height: auto;
+	}
+	.product-item__details li {
+		margin-bottom: 1em;
+	}
+	.product-item__gallery__image-main {
+		margin-bottom: 2em;
+		min-height: 403px;
+		height: 403px;
+		display: table;
+		table-layout: fixed;
+		text-align: center;
+		width: 100%;
+		// Limit the longest size of the main image to 400px max and center
+		// Extra 3px prevents the content from bumping up and down when main image orientation changes. I know right‽
+		max-width: 403px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.product-item__gallery__image-thumb {
+		min-height: 60px;
+		height: 60px;
+		max-height: 60px;
+		min-width: 60px;
+		width: 60px;
+		max-width: 60px;
+		position: relative;
+		margin-left: 0.5em;
+		margin-bottom: 0.5em;
+		display: inline-block;
+		zoom: 1;
+		*display: inline;
+		background-position: center center;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		background-size: cover;
+		cursor: pointer;
+	}
+	.product-item__footer {
+		border-top-width: 1px;
+		border-top-style: solid;
+		padding-top: 12px;
+		margin-top: 12px;
+	}
+	.product-item__gallery__image-thumb > span {
+		 position: absolute;
+		 left: -9999em;
+		 font-size: -9999em;
+	}
+
+} // end @if

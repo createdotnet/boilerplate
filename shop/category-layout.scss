@@ -1,0 +1,43 @@
+
+// These are included by default in the boilerplate setup but you can set this variable to 'false'.
+
+@if $shop-category-default-styles == true {
+
+	.product-summary-list--row {
+
+		// Reset user-agent list styles
+		margin-left: 0;
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style: none;
+	}
+
+
+	.product-summary-list--tile {
+
+		.product-summary__image {
+
+			margin-bottom: ($base-spacing-unit/5)*2;
+		}
+
+		.product-summary__details__title {
+
+			// Break long titles
+			word-wrap: break-word;
+
+			@include font-size($base-font-size - 2px);
+			margin-bottom: ($base-spacing-unit/5)*2;
+		}
+
+		.product-summary__body {
+
+			// Add spacing to the anchor
+			margin-bottom: $base-spacing-unit;
+		}
+	}
+
+	// @TODO: Add the flexbox alignment CSS here
+	// @TODO: Add the mixin that creates all the grid widths at each breakpoint so that the user can select a grid size within the application
+
+
+} // end @if

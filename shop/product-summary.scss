@@ -1,0 +1,45 @@
+@if $product-summary-default-styles == true {
+
+	.product-summary {
+
+		position: relative;
+	}
+	
+	// E: sale banner
+	.product-summary__sale-banner {
+		
+		position: absolute;
+		z-index: 10;
+	}
+
+	.product-summary__body {
+
+		// INFO: Extends the .link-complex inuit.css object, specifically assigned to an <a> element for more flexible RWD
+		// @TODO: work out how to do this without inuit.css
+		position: relative;
+		display: block;
+
+		// Extend the Clearfix
+		@extend .cf;
+
+	}
+
+	.product-summary__details {
+
+		// INFO: Extends the .multi-list inuit.css object, specifically assigned to an <ul> element
+		// @TODO: work out how to do this without inuit.css
+		margin-bottom: 0;
+		border-top: none;
+
+		// Reset list styles
+		list-style-type: none;
+		padding-left: 0;
+	}
+
+	// E: Quick-add-to-basket wrapper
+	.product-summary__add {
+
+		width: 100%;
+	}
+
+} // end @if
