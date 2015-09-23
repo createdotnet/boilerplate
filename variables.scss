@@ -8,3 +8,19 @@
 
 
 $base-font-size: 16px!default;
+$base-line-height: 18px!default;
+$base-spacing-unit: 24px!default;
+
+
+// Breakpoints
+$lap-start:         481px!default;
+$desk-start:        1024px!default;
+$desk-wide-start:   1200px!default;
+$lap-mid-start: 	$desk-wide-start - $lap-start !default;
+
+// Default Shop Styles
+// These used to be inline in the html, as of WDK version 1.2 you will need to include them in your own CSS or roll your own
+
+$shop-product-default-styles: true!default;
+$shop-category-default-styles: true!default;
+$product-summary-default-styles: true!default;

@@ -1,0 +1,25 @@
+/* ============= //
+// MEDIA QUERIES //
+// ============= */
+
+// Stu Robson’s life changing IE fallback media query
+// https://github.com/sturobson/Sassifaction/blob/master/sass/base/mixins/_media-queries.scss
+// Added a -1px for max media query to work with inuit.css’s breakpoint variables – @TODO: make this work with variables only, so that arbitrary integers don’t get 1px removed
+// @TODO: document this a bit more
+@mixin mq($mbp, $min-max: min, $lt-ie9: false) {
+
+	@if $lt-ie9 == true {
+		.lt-ie9 & {
+			@content;
+		}
+	}
+
+	@if $min-max == max {
+		$mbp: $mbp - 1px;
+	}
+
+	@media only screen and (#{$min-max}-width:$mbp) {
+		@content;
+	}
+
+}

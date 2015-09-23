@@ -1,0 +1,133 @@
+
+// Category Layouts Grid Sizes
+//
+// This Sass map is looped over in the below code in order to create the responsive width classes for the category tile layout.
+// The 4 sizes correspond to the 4 available in the application using the range slider.
+// Because this list is set as !default, it can be overwritten in each template setup.
+
+$cat-layout-lap: (
+	wdk_columnCount_0: (
+		xsmall: 33%,
+		small: 33%,
+		medium: 33%,
+		large: 50%
+	),
+	wdk_columnCount_1: (
+		xsmall: 33%,
+		small: 33%,
+		medium: 33%,
+		large: 50%
+	), 
+	wdk_columnCount_2: (
+		xsmall: 33%,
+		small: 33%,
+		medium: 50%,
+		large: 100%
+	), 
+) !default;
+
+$cat-layout-lap-mid: (
+	wdk_columnCount_0: (
+		xsmall: 25%,
+		small: 33%,
+		medium: 25%,
+		large: 33%
+	),
+	wdk_columnCount_1: (
+		xsmall: 25%,
+		small: 33%,
+		medium: 33%,
+		large: 50%
+	), 
+	wdk_columnCount_2: (
+		xsmall: 25%,
+		small: 33%,
+		medium: 50%,
+		large: 100%
+	), 
+) !default;
+
+$cat-layout-desk: (
+	wdk_columnCount_0: (
+		xsmall: 16.666%,
+		small: 20%,
+		medium: 25%,
+		large: 33%
+	),
+	wdk_columnCount_1: (
+		xsmall: 20% ,
+		small: 25%,
+		medium: 33%,
+		large: 50%
+	), 
+	wdk_columnCount_2: (
+		xsmall: 25%,
+		small: 33%,
+		medium: 50%,
+		large: 100%
+	), 
+) !default;
+
+
+
+// Mixin to create the classes using the above maps
+// @include category-layout--tile($cat-layout-lap, false, $lap-start);
+// Would give you every column count variation for the lap and up breakpoint.
+
+@mixin category-layout--tile($map-name, $ie-support: true, $breakpoint: not-set){
+
+	@if $breakpoint == not-set {
+
+		// First layer of the sass map
+		@each $column-count, $layout-sizes in $map-name {
+
+			// Create the .wdk_columnCount_x class
+			&.#{$column-count} {
+
+				// Third layer of the sass map
+				@each $layout-size, $width in $layout-sizes {
+					.product-summary-list--tile--#{$layout-size} .grid__item {
+						width: $width;
+					} 
+			
+				} 
+		
+			} // End the .wdk_columnCount_x class
+
+		} // End @each
+
+	} @else {
+
+		@include mq($breakpoint, min, $ie-support) {
+
+			// First layer of the sass map
+			@each $column-count, $layout-sizes in $map-name {
+
+				// Create the .wdk_columnCount_x class
+				&.#{$column-count} {
+
+					// Third layer of the sass map
+					@each $layout-size, $width in $layout-sizes {
+						.product-summary-list--tile--#{$layout-size} .grid__item {
+							width: $width;
+						} 
+				
+					} 
+			
+				} // End the .wdk_columnCount_x class
+
+			} // End @each
+
+		} // End Media query
+
+	} // end @else
+
+
+}
+
+
+body {
+	@include category-layout--tile($cat-layout-lap, false, $lap-start);
+	@include category-layout--tile($cat-layout-lap-mid, false, $lap-mid-start);
+	@include category-layout--tile($cat-layout-desk, true, $desk-start);
+}
