@@ -5,7 +5,7 @@
 // Example Usage: @include heading-size( $heading--med );
 
 // major-second
-$heading--x-small: (
+$heading--small: (
 	alpha: 1.602,
 	beta: 1.424,
 	gamma: 1.266,
@@ -15,22 +15,12 @@ $heading--x-small: (
 );
 
 // minor-third
-$heading--small: (
+$heading--med: (
 	alpha: 2.074,
 	beta: 1.728,
 	gamma: 1.44,
 	delta: 1.2,
 	epsilon: 1.1,
-	zeta: 1
-);
-
-// major-third
-$heading--med: (
-	alpha: 2.441,
-	beta: 1.953,
-	gamma: 1.563,
-	delta: 1.25,
-	epsilon: 1.125,
 	zeta: 1
 );
 
