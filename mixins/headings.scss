@@ -51,13 +51,13 @@ $heading--x-large: (
 	line-height: 1.2;
 }
 
-@mixin heading-size( $scale: $heading--small ){
+@mixin heading-size( $mixin-scale: $heading--small ){
 
-	@each $heading, $size in $scale {
+	@each $mixin-heading, $mixin-size in $mixin-scale {
 
-		.heading--#{$heading} {
+		.heading--#{$mixin-heading} {
 
-			@include font-size( $base-font-size * $size, $line-height:false );
+			@include font-size( $template-options-font-size * $mixin-size, $mixin-line-height:false );
 
 		}
 

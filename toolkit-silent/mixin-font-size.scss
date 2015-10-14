@@ -5,7 +5,7 @@
 
 /*
 // Behavior: Set the font size using rem values including a px fallback for browsers that don’t yet support this feature.
-// Dependencies: $base-font-size variable being set in variables.scss or variables-user.scss
+// Dependencies: $template-options-font-size variable being set in variables.scss or variables-user.scss
 // Browser Support: http://caniuse.com/#feat=rem
 // Further Reading: http://snook.ca/archives/html_and_css/font-size-with-rem
 */
@@ -16,7 +16,7 @@
 
 // Source SCSS
 
-$base-font-size: 16px;
+$template-options-font-size: 16px;
 
 .your-class-name {
 
@@ -34,14 +34,15 @@ $base-font-size: 16px;
 */
 
 
-@mixin font-size($font-size, $line-height:true) {
+@mixin font-size($mixin-font-size, $mixin-line-height:true) {
 
 	// Initial value set in px, fallback for browsers that don’t support REM
-	font-size: $font-size;
+	font-size: $mixin-font-size;
 	// REM calculated value
-	font-size: ($font-size / $base-font-size) * 1rem;
+	font-size: ($mixin-font-size / $template-options-font-size) * 1rem;
 
-    @if $line-height == true{
-        line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
-    }
+	@if $mixin-line-height == true{
+
+		line-height:ceil($mixin-font-size / $template-options-line-height) * ($template-options-line-height / $mixin-font-size);
+	}
 }
