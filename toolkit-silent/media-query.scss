@@ -11,7 +11,7 @@
 */
 
 
-@mixin media-query($mixin-breakpoint-value, $mixin-min-or-max: min, $mixin-support-legacy-ie: false) {
+@mixin media-query($mixin-breakpoint-value, $mixin-min-or-max: min,$mixin-support-legacy-ie: false) {
 
 	@if $mixin-support-legacy-ie == true {
 		.lt-ie9 & {
