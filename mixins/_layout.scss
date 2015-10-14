@@ -157,8 +157,8 @@ $layout-is-set: false !default;
 	@if $layout == 2 {
 
 		// remove any constraints
-		.page-wrapper,
-		.page-wrapper .inner-constraint {
+		.structure__item--page,
+		.structure__item--page .structure__item__utility {
 			width: 100%;
 		}
 
