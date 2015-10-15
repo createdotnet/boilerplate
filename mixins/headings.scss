@@ -57,7 +57,7 @@ $heading--x-large: (
 
 		.heading--#{$mixin-heading} {
 
-			@include font-size( $template-options-font-size * $mixin-size, $mixin-line-height:false );
+			@include font-size( $template-option-font-size * $mixin-size, $mixin-line-height:false );
 
 		}
 
