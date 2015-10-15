@@ -1,0 +1,222 @@
+/* =========================== //
+// NAVIGATION DROPDOWN STACKED //
+// =========================== */
+
+
+// Hide the toggles.
+// If the below mixin is included, they will be displayed.
+.js-nav-main__item__toggle {
+	display: none;
+}
+
+// ===== //
+// MIXIN //
+// ===== //
+
+// This mixin will throw the navigation in to a stacked layout with up and down arrow icons to open and close sub sections.
+// This mixin can be included in a media query. For example, many templates will use this pattern on mobile breakpoints, side menu layouts will use it on all breakpoints.
+// @TODO: Fallbacks for non responsive browsers
+
+@mixin navigation--dropdown--stacked($size: null, $depth: null) {
+
+
+	.nav-main-wrapper {
+
+		// Holding
+
+	}
+
+
+
+	// ======== //
+	// NAV MAIN //
+	// ======== //
+
+	.nav-main {
+
+		width: 100%;
+
+	}
+
+
+	// E: a link that skips past the navigation when js is not avaible - the markup is within a <noscript> tag
+	.nav-main-skip {
+
+		display: block;
+		width: 100%;
+		text-decoration: none;
+		padding-right: ($base-spacing-unit/5)*3;
+		padding-left: ($base-spacing-unit/5)*3;
+		margin-bottom: $base-spacing-unit;
+
+		// Optional: is size has been set
+		@if $size {
+			
+			height: $size;
+			line-height: $size;
+			
+		}
+
+	}
+	
+
+
+	// ======== //
+	// NAV ITEM //
+	// ======== //
+
+	.nav-main__item {
+
+		// Mobile first
+		width: 100%;
+
+		// Ensure its not inline-block, and as such make items stacked
+		display: block;
+
+		// Modifier: Item has sub-menu
+		&--has-sub {
+
+			position: relative;
+
+		}
+		
+	}
+
+	
+
+	// ======== //
+	// NAV LIST //
+	// ======== //
+
+	.nav-main__list {
+
+		// Context: Direct child of a sub-menu
+		.nav-main__item--has-sub > & {
+
+			margin-left: ($base-spacing-unit/5)*3;
+
+		}
+
+		// Modifier: JS added class to close menu
+		&--closed {
+
+			height: 0;
+			overflow: hidden;
+
+		}
+
+	}
+
+
+
+	// ======== //
+	// NAV LINK //
+	// ======== //
+
+	.nav-main__link {
+
+		display: block;
+		width: 100%;
+
+		// Basically should be a mixin
+		white-space: nowrap;
+		-ms-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		// Optional: is size has been set
+		@if $size {
+			
+			height: $size;
+			line-height: $size;
+			padding-right: ($base-spacing-unit/5)*3;
+			
+		}
+		
+			padding-left: ($base-spacing-unit/5)*3;
+
+
+		// Context: Add spacing to direct child elements of the root nav list
+		.nav-main__list--depth-0 > li > & {
+			
+			
+		}
+
+		// Context: Direct child of sub-menu
+		.nav-main__item--has-sub > & {
+
+			// Optional: is size has been set
+			@if $size {
+				
+				padding-right: $size;
+				
+			}
+
+		}
+		
+	} // end .nav-main__link
+
+
+	
+	// ================== //
+	// JAVASCRIPT TOGGLES //
+	// ================== //
+
+	.js-nav-main__item__toggle {
+
+		// Context: Browser has JS
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: table;
+		text-align: center;
+		text-decoration: none;
+		
+		// E: drop down arrows
+		.i:before {
+
+			font-size: $base-icon-size;
+			display: table-cell;
+			vertical-align: middle;
+
+			// Optional: is size has been set
+			@if $size {
+				
+				width: $size;
+				height: $size;
+			}			
+		}
+
+		.i-up {
+			display: none;
+		}
+		&.js-nav-main__item__toggle--active {
+			.i-up {
+				display: table-cell;
+			}
+			.i-down {
+				display: none;
+			}
+		}
+
+
+		@if $depth {
+			
+			.nav-main__list--depth-#{$depth - 1} & {
+				
+				display: none;
+
+			}
+
+		}
+
+		.no-js & {
+
+			display: none;
+			
+		}
+
+	} // end .js-nav-main__item__toggle
+
+
+} // end @mixin

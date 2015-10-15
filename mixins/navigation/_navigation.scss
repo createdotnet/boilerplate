@@ -1,0 +1,23 @@
+
+/* ======================== //
+// SHARED NAVIGATION STYLES //
+// ======================== */
+
+.nav-main__list {
+
+	// Extend the list reset
+	@extend %reset-list;
+}
+
+// E: navigation links
+.nav-main__link {
+
+	// remove link underline from all menu items
+	text-decoration: none;
+}
+
+// E: toggle to open and close the menu
+.js-nav-main__main-toggle {
+
+	text-decoration: none;
+}
