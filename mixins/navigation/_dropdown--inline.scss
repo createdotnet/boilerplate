@@ -1,0 +1,200 @@
+/* =========================== //
+// NAVIGATION DROPDOWN STACKED //
+// =========================== */
+
+// This mixin will put the navigation inline with drop downs on hover.
+// This mixin can be included in a media query if required.
+
+// $size 							- sets the icon size
+// $depth 							- 
+
+@mixin navigation--dropdown--inline($size: null, $depth: null) {
+
+	// ======== //
+	// NAV MAIN //
+	// ======== //
+
+	.nav-main {
+
+		width: 100%;
+	}
+
+	// Hide the drop down toggle arrows.
+	// They are included only on the dropdown--stacked option mixin
+	.js-nav-main__item__toggle {
+		display: none;
+	}
+
+	// ======== //
+	// NAV LIST //
+	// ======== //
+
+	.nav-main__list {
+
+		// Reset all user-agent styles from <ul> <ol> elements
+		margin-left: 0;
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style: none;
+
+		width: 100%;
+		position: relative;
+
+		// Modifier: Depth 0
+		&--depth-0 {
+
+			font-size: 0;
+			white-space: nowrap;
+
+		}
+
+		// Modifier: Depth 1
+		&--depth-1 {
+
+			width: auto;
+
+		}
+
+	}
+
+	// Context: Direct child of a sub category
+	.nav-main__item--has-sub > .nav-main__list {
+
+		position: absolute;
+		left: -9999em;
+
+	}
+
+	// Context: Direct child of modifier --depth-1
+	.nav-main__list--depth-1 .nav-main__list {
+
+		width: auto;
+
+	}
+
+
+
+
+	// ======== //
+	// NAV ITEM //
+	// ======== //
+
+	.nav-main__item {
+
+		// Modifier: Item has sub-menu
+		&--has-sub {
+
+			position: relative;
+			z-index: index($z-index-list, nav-drop-down);
+
+			// Interaction: Hover
+			&:hover {
+
+				> .nav-main__list {
+
+					left: 100%;
+					top: 0;
+
+				}
+
+				> .nav-main__list--depth-1 {
+
+					left: 0;
+					top: 100%;
+
+				}
+
+			}
+		}
+	}
+
+	// Context: Direct child of modifier --depth-0
+	.nav-main__list--depth-0 > .nav-main__item {
+
+		display: inline-block;
+		font-size: $template-option-font-size;
+		position: relative;
+
+	}
+
+	// Context: Direct child of modifier --depth-1
+	.nav-main__list--depth-1 .nav-main__item {
+
+		display: block;
+
+	}
+
+
+
+	// ======== //
+	// NAV LINK //
+	// ======== //
+
+	.nav-main__link {
+
+		// remove link underline from all menu items
+		text-decoration: none;
+
+		// Shared styles
+		width: 100%;
+		display: inline-block;
+
+		// @TODO: wrap in an IE support if
+		*zoom: 1;
+		*display: inline;
+
+	}
+
+	// Context: direct child of a sub category
+	.nav-main__item--has-sub > .nav-main__link {
+		&:after {
+			content: "\00a0\00bb";
+
+		}
+	}
+
+	@if $depth {
+		
+		.nav-main__list--depth-#{$depth - 1} .nav-main__link  {
+
+			&:after {
+				
+				display: none;
+			
+			}
+
+		}
+
+	}
+
+
+	// Context: Direct child of modifier --depth-0
+	.nav-main__list--depth-1 .nav-main__link {
+
+		display: block;
+		white-space: nowrap;
+
+	}
+
+	// Optional: is size has been set
+	@if $size {
+
+		// Context: Direct child of modifier --depth-0
+		.nav-main__list--depth-0 > li > .nav-main__link {
+		
+			padding: $size;
+
+		}
+
+		// Context: Direct child of modifier --depth-1
+		.nav-main__list--depth-1 li .nav-main__link {
+		
+			padding: $size*0.75 $size;
+
+		}
+
+	}
+
+
+
+} // End: Mixin
