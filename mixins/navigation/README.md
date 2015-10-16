@@ -19,4 +19,4 @@ OR
 
 ## Dependencies
 
-This module required that base variables are set, eg. `$base-spacing-unit` and `$base-font-size`
+This module required that base variables are set, eg. `$base-spacing-unit` and `$template-option-font-size`
