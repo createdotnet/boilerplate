@@ -5,7 +5,7 @@ The navigation module includes base navigation styles and mixins that allow you 
 
 ## Usage
 
-To include the navigation module in your project, import it using `@import "objects/navigation/all"`
+To include the navigation module in your project, import it using `@import "mixins/navigation/all"`
 
 ### Mixins
 
