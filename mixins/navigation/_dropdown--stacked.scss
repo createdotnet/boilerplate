@@ -5,7 +5,11 @@
 // This mixin will throw the navigation in to a stacked layout with up and down arrow icons to open and close sub sections.
 // This mixin can be included in a media query. For example, many templates will use this pattern on mobile breakpoints, side menu layouts will use it on all breakpoints.
 
-@mixin navigation--dropdown--stacked($size: null, $depth: null) {
+// $size 							- sets the icon size
+// $mixin-navigation-spacing-unit	- 
+// $depth 							- 
+
+@mixin navigation--dropdown--stacked($size: null, $depth: null, $mixin-navigation-spacing-unit: $base-spacing-unit) {
 
 
 	// ======== //
@@ -25,9 +29,9 @@
 		display: block;
 		width: 100%;
 		text-decoration: none;
-		padding-right: ($base-spacing-unit/5)*3;
-		padding-left: ($base-spacing-unit/5)*3;
-		margin-bottom: $base-spacing-unit;
+		padding-right: ($mixin-navigation-spacing-unit/5)*3;
+		padding-left: ($mixin-navigation-spacing-unit/5)*3;
+		margin-bottom: $mixin-navigation-spacing-unit;
 
 		// Optional: is size has been set
 		@if $size {
@@ -79,7 +83,7 @@
 		// Context: Direct child of a sub-menu
 		.nav-main__item--has-sub > & {
 
-			margin-left: ($base-spacing-unit/5)*3;
+			margin-left: ($mixin-navigation-spacing-unit/5)*3;
 
 		}
 
@@ -118,18 +122,12 @@
 			
 			height: $size;
 			line-height: $size;
-			padding-right: ($base-spacing-unit/5)*3;
+			padding-right: ($mixin-navigation-spacing-unit/5)*3;
 			
 		}
 		
-			padding-left: ($base-spacing-unit/5)*3;
+		padding-left: ($mixin-navigation-spacing-unit/5)*3;
 
-
-		// Context: Add spacing to direct child elements of the root nav list
-		.nav-main__list--depth-0 > li > & {
-			
-			
-		}
 
 		// Context: Direct child of sub-menu
 		.nav-main__item--has-sub > & {

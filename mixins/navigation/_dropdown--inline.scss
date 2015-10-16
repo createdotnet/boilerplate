@@ -2,6 +2,12 @@
 // NAVIGATION DROPDOWN STACKED //
 // =========================== */
 
+// This mixin will put the navigation inline with drop downs on hover.
+// This mixin can be included in a media query if required.
+
+// $size 							- sets the icon size
+// $depth 							- 
+
 @mixin navigation--dropdown--inline($size: null, $depth: null) {
 
 	// ======== //
