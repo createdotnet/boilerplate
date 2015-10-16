@@ -1,11 +1,3 @@
 
 @import "dropdown--inline";
 @import "dropdown--stacked";
-
-// TODO: find a way to put this inside the mixin, allowing the mixin to be used in a media query. Becuase you cant extend inside a media query
-// Syntax error: You may not @extend an outer selector from within @media. You may only @extend selectors within the same directive.
-.nav-main__list {
-
-	// Extend the list reset
-	@extend %reset-list;
-}

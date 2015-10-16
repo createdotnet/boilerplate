@@ -70,6 +70,12 @@
 
 	.nav-main__list {
 
+		// Reset all user-agent styles from <ul> <ol> elements
+		margin-left: 0;
+		margin-bottom: 0;
+		padding-left: 0;
+		list-style: none;
+
 		// Context: Direct child of a sub-menu
 		.nav-main__item--has-sub > & {
 
