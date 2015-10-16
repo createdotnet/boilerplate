@@ -53,7 +53,7 @@ $layout-is-set: false !default;
 		// Set the template max width and center it on the page
 		.structure {
 
-			max-width: $template-max-width;
+			max-width: $template-option-max-width;
 			margin: auto;
 		}
 
@@ -71,7 +71,7 @@ $layout-is-set: false !default;
 		
 		.structure__item__utility {
 
-			max-width: $template-max-width;
+			max-width: $template-option-max-width;
 			margin: auto;
 		}
 
@@ -89,7 +89,7 @@ $layout-is-set: false !default;
 
 		.structure {
 
-			max-width: $template-max-width;
+			max-width: $template-option-max-width;
 			margin: auto;
 		}
 
@@ -109,7 +109,7 @@ $layout-is-set: false !default;
 		.structure__item--page,
 		.structure__item--footer .structure__item__utility {
 
-			max-width: $template-max-width;
+			max-width: $template-option-max-width;
 			margin: auto;
 		}
 
@@ -128,7 +128,7 @@ $layout-is-set: false !default;
 		.structure__item--page .structure__item__utility,
 		.structure__item--footer .structure__item__utility {
 
-			max-width: $template-max-width;
+			max-width: $template-option-max-width;
 			margin: auto;
 		}
 
@@ -164,7 +164,7 @@ $layout-is-set: false !default;
 
 		// Apply contraint to page builder content
 		.container__content {
-			max-width: $template-max-width;
+			max-width: $template-option-max-width;
 			margin: auto;
 		}
 	} 
