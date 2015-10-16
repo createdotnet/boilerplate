@@ -142,7 +142,7 @@
 	// Context: direct child of a sub category
 	.nav-main__item--has-sub > .nav-main__link {
 		&:after {
-			content: " »";
+			content: "\00a0\00bb";
 
 		}
 	}
