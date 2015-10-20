@@ -1,0 +1,48 @@
+/* =================== //
+// COMPONENT: HEADINGS //
+// =================== */
+
+// Creates a typographic scale for headings using a choice of typographic scales, taken from http://type-scale.com/
+// The actual values produced are REMs with a px fallback
+// The default scales are set in boilerplate/variables but can be changed in any template
+// Example Usage: @include heading-size( $heading--med );
+
+
+.heading {
+	margin-top: 0;
+	margin-bottom: .5em;
+	line-height: 1.2;
+}
+
+@mixin heading-size( $mixin-scale: $heading--small ){
+
+	@each $mixin-heading, $mixin-size in $mixin-scale {
+
+		.heading--#{$mixin-heading} {
+
+			@include font-size( $template-option-font-size * $mixin-size, false );
+
+		}
+
+	} // end @each
+} // end @mixin
+
+
+// Create the user selectable (in the design studio) heading sizes, passing through the heading scale maps found in the boilerplate/variables file by default (you can roll your own if required).
+// The 'heading--' class is added to the template <body> using the WDK helper class tag - <body class="<!--WDK:base:helperClasses-->">
+
+@include heading-size( $heading--med );
+
+.heading--small {
+	@include heading-size( $heading--small );
+}
+.heading--med {
+	@include heading-size( $heading--med );
+}
+.heading--lrg {
+	@include heading-size( $heading--large );
+}
+.heading--x-lrg {
+	@include heading-size( $heading--x-large );
+}
+
