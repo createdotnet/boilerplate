@@ -34,3 +34,52 @@ $template-option-major-breakpoint: 775px !default;
 // Specify the maximum width of the template
 // Note: For full width use 100%
 $template-option-max-width: 1000px !default;
+
+
+
+/* ============== //
+// HEADING SCALES //
+// ============== */
+
+// These Sass maps are passed in to the headings mixin (boilerplate/component/headings) to create the user selectable (in the design studio) heading scales.
+// Values taken from http://type-scale.com/
+
+// major-second
+$heading--small: (
+	alpha: 1.602,
+	beta: 1.424,
+	gamma: 1.266,
+	delta: 1.125,
+	epsilon: 1.063,
+	zeta: 1
+) !default;
+
+// minor-third
+$heading--med: (
+	alpha: 2.074,
+	beta: 1.728,
+	gamma: 1.44,
+	delta: 1.2,
+	epsilon: 1.1,
+	zeta: 1
+) !default;
+
+// perfect-fourth
+$heading--large: (
+	alpha: 3.157,
+	beta: 2.369,
+	gamma: 1.777,
+	delta: 1.333,
+	epsilon: 1.166,
+	zeta: 1
+) !default;
+
+// augmented-fourth
+$heading--x-large: (
+	alpha: 3.998,
+	beta: 2.827,
+	gamma: 1.999,
+	delta: 1.414,
+	epsilon: 1.207,
+	zeta: 1
+) !default;

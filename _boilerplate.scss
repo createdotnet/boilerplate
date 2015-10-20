@@ -1,0 +1,22 @@
+/* =========== //
+// Boilerplate //
+// =========== */
+
+// Note: Importing this file is a quick and easy way to get the complete Boilerplate in your project. You don't have to include this file though, you can just import the parts you require.
+
+// Variable Defaults
+@import "variables";
+
+// Toolkit
+@import "toolkit/border-box";
+@import "toolkit/clearfix";
+@import "toolkit/clearfix-legacy";
+@import "toolkit/fluid-media";
+@import "toolkit/mixin-font-size";
+@import "toolkit/mixin-media-query";
+
+// Components
+@import "component/layout";
+@import "component/navigation/all";
+@import "component/headings";
+@import "component/validation";
