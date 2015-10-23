@@ -8,10 +8,17 @@
 // Dependencies: None
 */
 
-
-.reset-list {
+// Mixin
+@mixin reset-list {
 
 	margin-left: 0;
 	margin-bottom: 0;
 	list-style: none;
+}
+
+// Define the class
+.reset-list {
+
+	// Extend the mixin
+	@include reset-list();
 }
