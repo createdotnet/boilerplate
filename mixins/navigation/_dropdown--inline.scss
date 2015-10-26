@@ -147,8 +147,10 @@
 
 	// Context: direct child of a sub category
 	.nav-main__item--has-sub > .nav-main__link {
+
+		// TODO extend the mixin to pass custom characters
 		&:after {
-			content: "\00a0\00bb";
+			content: "\00bb"; // encoded special character "»"
 
 		}
 	}
