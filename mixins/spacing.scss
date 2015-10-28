@@ -1,0 +1,9 @@
+
+// Spacing Function
+//
+// 
+
+@function spacing($function-multiply-value){
+
+	@return ($template-option-spacing-size * $function-multiply-value)
+}
