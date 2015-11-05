@@ -1,0 +1,49 @@
+/* ========== //
+// WHITESPACE //
+// ========== */
+
+
+/*
+// Behavior: Removes and resets whitespace.
+// Dependencies:
+// * $template-option-font-size variable
+*/
+
+
+
+// Remove Whitespace
+
+@mixin whitespace-remove($mixin-line-height: false) {
+
+	font-size: 0;
+
+	@if ($mixin-line-height == true) {
+
+		line-height: 0;
+	}
+}
+
+
+
+// Reset Whitespace
+
+@mixin whitespace-reset($mixin-custom-font-size:false, $mixin-custom-line-height: false) {
+
+	// Reset font size
+	@if ($mixin-custom-font-size != false) {
+
+		// Use a custom unit
+		font-size: $mixin-custom-font-size;
+	} @else {
+
+		// Use template default
+		font-size: $template-option-font-size;
+	}
+
+	// Reset the line height with a custom unit
+	@if ($mixin-custom-line-height != false) {
+
+		line-height: $mixin-custom-line-height;
+	}
+}
+
