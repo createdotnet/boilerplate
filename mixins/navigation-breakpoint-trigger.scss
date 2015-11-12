@@ -16,6 +16,15 @@
 			z-index: 1000;
 			width: 100%;
 		}
+
+	} @else {
+
+		position: absolute;
+		left: -9999px;
+		font-size: 0;
+		height: 0;
+		width: 0;
+		overflow: hidden;
 	}
 
 	// Lower UI context
@@ -29,11 +38,4 @@
 
 		content: "#{$mixin-major-trigger-string}";
 	}
-}
-
-
-// Media query test
-.utility-navigation-breakpoint-trigger:before {
-
-	@include navigation-breakpoint-trigger(true);
 }
