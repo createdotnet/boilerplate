@@ -1,0 +1,37 @@
+// ================= //
+// Layout: Side Menu //
+// ================= //
+
+// allow for a full height navigation / header panel
+html,
+body,
+.structure,
+.structure__item--header {
+
+	height: 100%;
+}
+
+// set the side bar width
+.structure__item--header {
+
+	width: 200px;
+	float: left;
+}
+
+// offset the page content by the width of the side header
+.structure__item--page,
+.structure__item--footer {
+	margin-left: 200px;
+}
+
+.structure__item--footer {
+	// Because floats are odd, this stops the footer sitting underneath the left menu.
+	overflow: hidden;
+}
+
+// Set the template max width and center it on the page
+.structure {
+
+	max-width: $template-option-max-width;
+	margin: auto;
+}
