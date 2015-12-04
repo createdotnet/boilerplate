@@ -7,16 +7,6 @@
 */
 
 // Specify the smallest divisible spacing size
-// Usage: multiply the spacing size to define the scale of spacing
-// Examples:
-// 4px * 1 = 4px
-// 4px * 2 = 8px
-// 4px * 3 = 12px
-// 4px * 4 = 16px
-// 4px * 5 = 20px
-// 4px * 6 = 24px
-// 4px * 7 = 28px
-// 4px * 8 = 32px
 $template-option-spacing-size: 4px !default;
 
 // Specify the base font size
