@@ -2,6 +2,10 @@
 // Layout: inner contained //
 // ======================= //
 
+body {
+	margin: 0;
+}
+
 .structure {
 
 	max-width: $template-option-max-width;
