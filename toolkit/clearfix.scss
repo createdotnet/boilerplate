@@ -1,0 +1,27 @@
+/* ======== //
+// CLEARFIX //
+// ======== */
+
+
+/*
+// Behavior: Prevent a container’s height from collapsing when floating child elements.
+// Dependencies: None
+// Browser Support: http://caniuse.com/#feat=css-gencontent
+// Further Reading: http://nicolasgallagher.com/micro-clearfix-hack
+*/
+
+
+.clearfix {
+
+	&:before,
+	&:after {
+
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+
+		clear: both;
+	}
+}

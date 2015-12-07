@@ -1,0 +1,41 @@
+
+// Navigation Breakpoint Trigger
+//
+// 
+
+@mixin navigation-breakpoint-trigger($mixin-debug: false, $mixin-minor-trigger-string: minor, $mixin-major-trigger-string: major) {
+
+	@if($mixin-debug == true) {
+
+		display: block;
+
+		@at-root .utility-js-triggers {
+
+			position: fixed;
+			bottom: 0;
+			z-index: 1000;
+			width: 100%;
+		}
+
+	} @else {
+
+		position: absolute;
+		left: -9999px;
+		font-size: 0;
+		height: 0;
+		width: 0;
+		overflow: hidden;
+	}
+
+	// Lower UI context
+	@include media-query($template-option-major-breakpoint, max) {
+
+		content: "#{$mixin-minor-trigger-string}";
+	}
+
+	// Upper UI context
+	@include media-query($template-option-major-breakpoint, min) {
+
+		content: "#{$mixin-major-trigger-string}";
+	}
+}

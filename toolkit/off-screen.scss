@@ -1,0 +1,25 @@
+/* ========== //
+// OFF SCREEN //
+// ========== */
+
+
+/*
+// Behavior: Positions elements off-screen but still accessibly readable.
+// Dependencies: None
+*/
+
+// Mixin
+@mixin off-screen() {
+
+	position: absolute;
+	left: -9999px;
+}
+
+// Define the class
+// TODO should this be in a separate extend file for us?
+// TODO should this be prefixed with helper- or accesibility- ?
+.off-screen {
+
+	// Extend the mixin
+	@include off-screen();
+}
