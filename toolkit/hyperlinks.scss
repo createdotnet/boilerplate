@@ -1,0 +1,38 @@
+/* ========== //
+// HYPERLINKS //
+// ========== */
+
+
+/*
+// Behavior: Namespaced classes for hyperlinks in the Create.net livesites.
+// Dependencies: None
+*/
+
+// Mixin
+@mixin hyperlinks($mixin-state: "default") {
+
+	// anchor links
+	a,
+	// Back to top anchor
+	.back-to-top,
+	// Form label as a hyperlink
+	.faux-link {
+
+		@if ( $mixin-state == "default" ) {
+
+			@content;
+
+		} @elseif (  $mixin-state == "interact"  ) {
+
+			&:hover,
+			&:focus {
+
+				@content;
+			}
+
+		} @else {
+
+			@error "The parameter ‘#{$mixin-state}’ is not valid. Please use use either ‘default’ or ‘interact’, or check hyperlinks.scss for full documentation."
+		}
+	}
+}

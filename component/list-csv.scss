@@ -1,0 +1,46 @@
+/* =================== //
+// PATTERN: LIST - CSV //
+// =================== */
+
+
+/*
+// Behavior: 
+// Dependencies: 
+// Browser Support: 
+// Further Reading: 
+*/
+
+.list--csv {
+		
+	display: inline;
+	zoom: 1;
+	
+	@include whitespace-remove();
+	
+	> li {
+		
+		display: inline-block;
+		zoom: 1;
+		
+		margin-right: spacing(1);
+		
+		&::after {
+			
+			content:",";
+			@include whitespace-reset();
+		}
+		
+		&:last-child {
+			
+			&::after {
+				
+				display: none;
+			}
+		}
+	}
+	
+	.list--csv__text {
+
+		@include whitespace-reset();
+	}
+}
