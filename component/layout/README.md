@@ -1,7 +1,7 @@
 # Layout
 
 The Sass partials in this directory provide a basic wireframe layout for the header, page-wrapper and footer.
-There are currently 5 basic layout options availale, they should cover most use cases.
+There are currently 5 basic layout options available, they should cover most use cases.
 
 Only one of these should be imported in any project (Maybe one day there will be some checking to ensure one (and only one) has been imported).
 
