@@ -1,0 +1,31 @@
+// ================== //
+// Layout: full bleed //
+// ================== //
+
+body {
+	margin: 0;
+}
+
+.structure__item__utility {
+
+	max-width: $template-option-max-width;
+	margin: auto;
+}
+
+// Option: set page builder containers to full bleed
+// on day this will be another layout option, but for now, it only works with the full-bleed option.
+@if $pagebuilder-full-bleed == true {
+
+	// remove any constraints
+	.structure__item--page,
+	.structure__item--page .structure__item__utility {
+		width: 100%;
+		max-width: none;
+	}
+
+	// Apply contsraint to page builder content
+	.container__content {
+		max-width: $template-option-max-width;
+		margin: auto;
+	}
+}
