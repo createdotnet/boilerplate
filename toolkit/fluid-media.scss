@@ -13,7 +13,7 @@
 
 img,
 embed,
-object,
+// object, Causing issues with the flash 'slideshow' collapsing.
 video,
 input[type="image"] {
 
