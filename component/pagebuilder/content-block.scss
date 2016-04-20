@@ -1,0 +1,222 @@
+// TODO document this
+
+
+
+/* ============= //
+// CONTENT BLOCK //
+// ============= */
+
+/*
+// Shared
+*/
+
+// NOTE removed in _pb-live-container.scss
+// Set line height on text content content blocks
+.content-block--heading,
+.content-block--text,
+.content-block--image_text .media__copy,
+.content-block--form {
+
+	// TODO add this as a variable from the theme
+	line-height: 25px;
+}
+// Set line height differently on featured product widget
+.content-block--widget .grid-widget__prodTitle {
+
+	// TODO add this as a variable from the theme
+	line-height: 1.2;
+}
+
+
+// Default alignment of images
+.content-block--image,
+.content-block--image_text {
+
+	text-align: center;
+}
+
+// Prevent long text form overflowing containers
+.content-block--heading,
+.content-block--text,
+.content-block--image_text {
+
+	word-wrap: break-word;
+}
+
+/*
+// Content block elements
+*/
+
+.content-block {
+
+	> :last-child {
+
+		// Remove the vertical rhythm from last child elements in a container with vertical rhythm
+		.container--push-down & {
+
+			margin-bottom: 0;
+		}
+	}
+
+	> iframe {
+
+		width: 100%;
+
+		// TODO why 50px?
+		min-height: 50px;
+	}
+
+	// Fluid media
+	img {
+
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/*
+// Type: Heading
+*/
+
+.content-block--heading {
+
+	// if 'outer-spacing' or 'extra padding' is on, removing the last childs bottom spacing else we're adding spacing in two places
+	.container:not(.container--flush) & > :last-child,
+	&--extra-padding > :last-child {
+
+		margin-bottom: 0;
+	}
+
+	&--extra-padding {
+
+		padding: 40px;
+	}
+}
+
+.heading-alignment-left,
+.subheading-alignment-left {
+
+	text-align: left;
+}
+
+.heading-alignment-centre,
+.subheading-alignment-centre {
+
+	text-align: center;
+}
+
+.heading-alignment-right,
+.subheading-alignment-right {
+
+	text-align: right;
+}
+
+
+// Size modifiers
+.heading {
+
+	// Larger
+	&--size-larger > span {
+		font-size: 150%;
+	}
+
+	// Smaller
+	&--size-smaller > span {
+		font-size: 80%;
+	}
+
+}
+
+
+/*
+// Type: Image
+*/
+
+.content-block--image {
+
+	// Remove the whitespace below the image
+	line-height: 0;
+	font-size: 0;
+}
+
+
+
+/*
+// Type: Text
+*/
+
+.content-block--text {
+
+	// if 'outer-spacing' is on, removing the last childs bottom spacing else we're adding spacing in two places
+	.container:not(.container--flush) & :last-child {
+
+		margin-bottom: 0;
+	}
+}
+
+
+
+/*
+// Type: Horizontal Rule
+*/
+
+.content-block--divider .divider {
+
+	margin-bottom: 0;
+
+	.container--flush & {
+
+		margin-top: $live-pages-gutter--default;
+		margin-bottom: $live-pages-gutter--default;
+	}
+}
+
+
+
+/*
+// Type: Youtube
+*/
+
+// Reset the youtube CSS to make it responsive to 16:9 aspect ratio
+
+.youtube-widget.youtube-widget {
+
+	max-height: none;
+}
+
+.video__responsive-container.video__responsive-container {
+
+	max-width: 100% !important;
+	padding-bottom: 56.25% !important;
+
+	padding-top: 0;
+
+	iframe {
+
+		min-height: 100%;
+	}
+}
+
+
+
+/*
+// Type: Map
+*/
+
+// Reset the map to make it 4:3
+
+.content-block--widget .map--container.map--container {
+
+	min-height: 100%;
+	width: 100%;
+
+	.responsive-map {
+
+		max-width: 100%;
+	}
+
+	.map-canvas {
+
+		max-width: 100%;
+	}
+}

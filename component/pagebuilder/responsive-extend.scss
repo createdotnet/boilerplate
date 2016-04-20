@@ -1,0 +1,137 @@
+// TODO document this
+
+
+
+
+
+// B: Page Builder Grid
+.content-blocks.grid {
+
+	> :last-child {
+
+		margin-bottom: 0;
+	}
+
+	// Palm
+	@include mq(($live-pages-lap-start - 1px), max) {
+
+		margin-left: 0;
+	}
+}
+
+// B: Page Builder Grid Item
+.content-blocks .grid__item {
+
+	// TODO add as a variable
+	margin-bottom: $live-pages-gutter--default;
+
+	// Palm
+	@include mq(($live-pages-lap-start - 1px), max) {
+
+		padding-left: 0;
+		width: 100%;
+	}
+
+	// Lap
+	@include mq($live-pages-lap-start, min) {
+
+		// Remove the bottom margin
+		margin-bottom: 0;
+	}
+}
+
+// M:
+.content-blocks.grid--flush .grid__item {
+
+	margin-bottom: 0 !important;
+}
+
+
+
+// Media Grid
+.content-block.media--grid {
+
+	// Palm
+	@include mq(($live-pages-lap-mid-start - 1px), max) {
+
+		margin-left: 0;
+	}
+}
+
+// Media Grid
+.content-block.media--grid .media__medium,
+.content-block.media--grid .media__copy {
+
+	// Palm
+	@include mq(($live-pages-lap-mid-start - 1px), max) {
+
+		padding-left: 0;
+		width: 100%;
+	}
+}
+
+.content-block.media--grid .media__medium {
+
+	// Palm
+	@include mq(($live-pages-lap-mid-start - 1px), max) {
+		// TODO add as a variable
+		margin-bottom: $live-pages-gutter--default;
+	}
+}
+
+.content-block.media--wrap .media__medium {
+
+	// Palm
+	@include mq(($live-pages-lap-start - 1px), max) {
+
+		width: 50%;
+	}
+}
+
+
+/* ====================================== //
+// MEDIA QUERIES BASED ON CONTENT NUMBERS //
+// ====================================== */
+
+/*
+// 3 items in a container
+*/
+
+[data-pb-items="3"] .grid__item {
+
+	// Lap - Lap Mid
+	@include mq($live-pages-lap-start, min) {
+		@include mq(($live-pages-lap-mid-start - 1px), max) {
+
+			width: 50%;
+		}
+	}
+
+	&:first-child {
+
+		// Lap - Lap Mid
+		@include mq($live-pages-lap-start, min) {
+			@include mq(($live-pages-lap-mid-start - 1px), max) {
+
+				width: 100%;
+				margin-bottom: $live-pages-gutter--default;
+			}
+		}
+	}
+}
+
+/*
+// 4 items in a container
+*/
+
+[data-pb-items="4"] .grid__item {
+
+	// Lap - Lap Mid
+	@include mq($live-pages-lap-start, min) {
+		@include mq(($live-pages-lap-mid-start - 1px), max) {
+
+			width: 50%;
+			margin-bottom: $live-pages-gutter--default;
+		}
+	}
+}
