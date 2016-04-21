@@ -11,6 +11,19 @@
 */
 
 
+// TODO abstract this and add to the boilerplate
+%cf,
+%clearfix {
+
+	&:after {
+
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
 // B: shared styling
 .media {
 

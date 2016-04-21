@@ -20,7 +20,7 @@
 	}
 
 	// Palm
-	@include mq(($live-pages-lap-start - 1px), max) {
+	@include media-query(($live-pages-lap-start - 1px), max) {
 
 		margin-left: 0;
 	}
@@ -32,14 +32,14 @@
 	margin-bottom: $template-option-gutter-size;
 
 	// Palm
-	@include mq(($live-pages-lap-start - 1px), max) {
+	@include media-query(($live-pages-lap-start - 1px), max) {
 
 		padding-left: 0;
 		width: 100%;
 	}
 
 	// Lap
-	@include mq($live-pages-lap-start, min) {
+	@include media-query($live-pages-lap-start, min) {
 
 		// Remove the bottom margin
 		margin-bottom: 0;
@@ -58,7 +58,7 @@
 .content-block.media--grid {
 
 	// Palm
-	@include mq(($live-pages-lap-mid-start - 1px), max) {
+	@include media-query(($live-pages-lap-mid-start - 1px), max) {
 
 		margin-left: 0;
 	}
@@ -69,7 +69,7 @@
 .content-block.media--grid .media__copy {
 
 	// Palm
-	@include mq(($live-pages-lap-mid-start - 1px), max) {
+	@include media-query(($live-pages-lap-mid-start - 1px), max) {
 
 		padding-left: 0;
 		width: 100%;
@@ -79,7 +79,7 @@
 .content-block.media--grid .media__medium {
 
 	// Palm
-	@include mq(($live-pages-lap-mid-start - 1px), max) {
+	@include media-query(($live-pages-lap-mid-start - 1px), max) {
 
 		margin-bottom: $template-option-gutter-size;
 	}
@@ -88,7 +88,7 @@
 .content-block.media--wrap .media__medium {
 
 	// Palm
-	@include mq(($live-pages-lap-start - 1px), max) {
+	@include media-query(($live-pages-lap-start - 1px), max) {
 
 		width: 50%;
 	}
@@ -106,8 +106,8 @@
 [data-pb-items="3"] .grid__item {
 
 	// Lap - Lap Mid
-	@include mq($live-pages-lap-start, min) {
-		@include mq(($live-pages-lap-mid-start - 1px), max) {
+	@include media-query($live-pages-lap-start, min) {
+		@include media-query(($live-pages-lap-mid-start - 1px), max) {
 
 			width: 50%;
 		}
@@ -116,8 +116,8 @@
 	&:first-child {
 
 		// Lap - Lap Mid
-		@include mq($live-pages-lap-start, min) {
-			@include mq(($live-pages-lap-mid-start - 1px), max) {
+		@include media-query($live-pages-lap-start, min) {
+			@include media-query(($live-pages-lap-mid-start - 1px), max) {
 
 				width: 100%;
 				margin-bottom: $template-option-gutter-size;
@@ -133,8 +133,8 @@
 [data-pb-items="4"] .grid__item {
 
 	// Lap - Lap Mid
-	@include mq($live-pages-lap-start, min) {
-		@include mq(($live-pages-lap-mid-start - 1px), max) {
+	@include media-query($live-pages-lap-start, min) {
+		@include media-query(($live-pages-lap-mid-start - 1px), max) {
 
 			width: 50%;
 			margin-bottom: $template-option-gutter-size;
