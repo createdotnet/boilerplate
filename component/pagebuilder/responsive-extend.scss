@@ -20,7 +20,7 @@
 }
 
 // B: Page Builder Grid Item
-.content-blocks .grid__item {
+.content-blocks > .grid__item {
 
 	// TODO add as a variable
 	margin-bottom: $live-pages-gutter--default;
@@ -41,7 +41,7 @@
 }
 
 // M:
-.content-blocks.grid--flush .grid__item {
+.content-blocks.grid--flush > .grid__item {
 
 	margin-bottom: 0 !important;
 }
