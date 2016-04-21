@@ -1,9 +1,15 @@
+/* ========================= //
+// PAGEBUILDER: MEDIA OBJECT //
+// ========================= */
 
 
+/*
+// Behavior: Abstracted media and text module
+// Dependencies: variables.scss clearfix.scss
+// Browser Support:
+// Further Reading:
+*/
 
-/* ==== //
-// BASE //
-// ==== */
 
 // B: shared styling
 .media {
@@ -28,7 +34,7 @@
 // E: Medium
 .media__medium {
 
-	margin-bottom: $base-spacing-unit;
+	margin-bottom: $template-option-gutter-size;
 }
 
 // E: Medium link
@@ -56,7 +62,7 @@
 // ========= */
 
 // The maths
-// TODO add this to the pattern library
+// TODO abstract this to a function
 
 // Fraction/Percentages
 $half: percentage(1/2);
@@ -196,7 +202,7 @@ $containerContentsScaleStep4: ($half - $third) / 4;
 	.media__medium {
 
 		float: left;
-		margin-right: $base-spacing-unit;
+		margin-right: $template-option-gutter-size;
 
 		// Firefox: prevent the content form overflowing the component
 		max-width: 100%;
@@ -210,7 +216,7 @@ $containerContentsScaleStep4: ($half - $third) / 4;
 
 		float: right;
 		margin-right: 0;
-		margin-left: $base-spacing-unit;
+		margin-left: $template-option-gutter-size;
 	}
 }
 
@@ -222,7 +228,7 @@ $containerContentsScaleStep4: ($half - $third) / 4;
 	line-height: 0;
 
 	// Offset
-	margin-left: -$base-spacing-unit;
+	margin-left: -$template-option-gutter-size;
 
 	// E: Set default alignment and sizing
 	.media__ {
@@ -237,8 +243,8 @@ $containerContentsScaleStep4: ($half - $third) / 4;
 		&copy {
 
 			// TODO add these as a variables from the theme
-			@include font-size($base-font-size);
-			line-height: 25px;
+			@include font-size($template-option-font-size);
+			line-height: $template-option-line-height;
 		}
 
 		// E:
@@ -248,7 +254,7 @@ $containerContentsScaleStep4: ($half - $third) / 4;
 			display: inline-block;
 			width: 50%;
 			vertical-align: top;
-			padding-left: $base-spacing-unit;
+			padding-left: $template-option-gutter-size;
 		}
 	}
 }

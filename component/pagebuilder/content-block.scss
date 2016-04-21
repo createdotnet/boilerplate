@@ -1,10 +1,15 @@
-// TODO document this
+/* ========================== //
+// PAGEBUILDER: CONTENT BLOCK //
+// ========================== */
 
 
+/*
+// Behavior: Individual content container module
+// Dependencies: variables.scss
+// Browser Support:
+// Further Reading:
+*/
 
-/* ============= //
-// CONTENT BLOCK //
-// ============= */
 
 /*
 // Shared
@@ -17,14 +22,12 @@
 .content-block--image_text .media__copy,
 .content-block--form {
 
-	// TODO add this as a variable from the theme
-	line-height: 25px;
+	line-height: $template-option-line-height;
 }
 // Set line height differently on featured product widget
 .content-block--widget .grid-widget__prodTitle {
 
-	// TODO add this as a variable from the theme
-	line-height: 1.2;
+	line-height: $template-option-line-height;
 }
 
 
@@ -62,8 +65,8 @@
 
 		width: 100%;
 
-		// TODO why 50px?
-		min-height: 50px;
+		// Force a min-height on an iFrame
+		min-height: spacing(12); // 48px
 	}
 
 	// Fluid media
@@ -89,7 +92,7 @@
 
 	&--extra-padding {
 
-		padding: 40px;
+		padding: spacing(10); // 40px
 	}
 }
 
@@ -117,14 +120,15 @@
 
 	// Larger
 	&--size-larger > span {
+
 		font-size: 150%;
 	}
 
 	// Smaller
 	&--size-smaller > span {
+
 		font-size: 80%;
 	}
-
 }
 
 
@@ -166,8 +170,8 @@
 
 	.container--flush & {
 
-		margin-top: $live-pages-gutter--default;
-		margin-bottom: $live-pages-gutter--default;
+		margin-top: $template-option-gutter-size; // 24px
+		margin-bottom: $template-option-gutter-size; // 24px
 	}
 }
 

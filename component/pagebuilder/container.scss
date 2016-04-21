@@ -1,10 +1,15 @@
-// TODO document this
+/* ====================== //
+// PAGEBUILDER: CONTAINER //
+// ====================== */
 
 
+/*
+// Behavior: Outer container module of content blocks
+// Dependencies: variables.scss
+// Browser Support:
+// Further Reading:
+*/
 
-/* ========= //
-// CONTAINER //
-// ========= */
 
 // B: Container wrapper
 .container {
@@ -36,7 +41,7 @@
 	position: relative;
 	z-index: 2;
 
-	padding: $live-pages-gutter--default;
+	padding: $template-option-gutter-size;
 
 	// M: Remove container padding if set in settings panel
 	.container--flush & {

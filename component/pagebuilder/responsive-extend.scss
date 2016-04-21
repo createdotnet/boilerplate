@@ -1,7 +1,14 @@
-// TODO document this
+/* ====================================== //
+// PAGEBUILDER: RESPOSNIVE OBJECT EXTENDS //
+// ====================================== */
 
 
-
+/*
+// Behavior: Extend other modules to add responsive reflows
+// Dependencies: variables.scss container.scss content-block.scss media.scss page.scss
+// Browser Support: IE9>
+// Further Reading:
+*/
 
 
 // B: Page Builder Grid
@@ -22,8 +29,7 @@
 // B: Page Builder Grid Item
 .content-blocks > .grid__item {
 
-	// TODO add as a variable
-	margin-bottom: $live-pages-gutter--default;
+	margin-bottom: $template-option-gutter-size;
 
 	// Palm
 	@include mq(($live-pages-lap-start - 1px), max) {
@@ -74,8 +80,8 @@
 
 	// Palm
 	@include mq(($live-pages-lap-mid-start - 1px), max) {
-		// TODO add as a variable
-		margin-bottom: $live-pages-gutter--default;
+
+		margin-bottom: $template-option-gutter-size;
 	}
 }
 
@@ -114,7 +120,7 @@
 			@include mq(($live-pages-lap-mid-start - 1px), max) {
 
 				width: 100%;
-				margin-bottom: $live-pages-gutter--default;
+				margin-bottom: $template-option-gutter-size;
 			}
 		}
 	}
@@ -131,7 +137,7 @@
 		@include mq(($live-pages-lap-mid-start - 1px), max) {
 
 			width: 50%;
-			margin-bottom: $live-pages-gutter--default;
+			margin-bottom: $template-option-gutter-size;
 		}
 	}
 }
