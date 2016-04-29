@@ -1,0 +1,52 @@
+
+// Pagebuilder full width
+
+@mixin pagebuilder-full-width($page-container: "page-wrapper", $max-width: 1000px){
+
+    .has-pb-full-width-containers {
+
+        // remove page padding - will be applied back to PB blocks
+        .#{$page-container} {
+            padding: 0;
+        }
+
+        // remove page max-width - will be applied back to PB blocks
+        .#{$page-container} > .inner-constraint {
+            max-width: none;
+        }
+
+        // Set margin and padding back on
+        .container,
+        .container__content,
+        .site-main__page-title {
+            max-width: $max-width;
+            margin: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        // Remove max-width when the the "full width" container setting is on
+        .container.container--full-width {
+            max-width: none;
+        }
+
+
+        // Sort out side columns
+        &.wdk_columnCount_1 .site-main,
+        &.wdk_columnCount_2 .site-main {
+            width: 100% !important;
+            padding-left: 0 !important;
+        }
+        .site-complementary--primary,
+        .site-complementary--secondary {
+            width: 100% !important;
+            max-width: 1000px;
+            margin: auto;
+            float: none !important;
+        }
+
+    } // end .has-pb-full-width-containers
+
+} // end @mixin
+
+@include  pagebuilder-full-width();
