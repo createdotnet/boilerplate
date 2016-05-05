@@ -1,0 +1,87 @@
+/* ====================== //
+// PAGEBUILDER: CONTAINER //
+// ====================== */
+
+
+/*
+// Behavior: Outer container module of content blocks
+// Dependencies: variables.scss
+// Browser Support:
+// Further Reading:
+*/
+
+
+// B: Container wrapper
+.container {
+
+	width: 100%;
+	position: relative;
+
+	// Set the default for background image
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	// Reset line-height
+	// NOTE set this where needed on content-block--[types]
+	line-height: 0;
+}
+
+// M: Set the container background image to tiled
+.container--image-tile {
+
+	background-repeat: repeat;
+	background-size: auto;
+}
+
+// E:
+.container__content {
+
+	// Bring above background colour div
+	position: relative;
+	z-index: 2;
+
+	padding: $template-option-gutter-size;
+
+	// M: Remove container padding if set in settings panel
+	.container--flush & {
+
+		padding: 0 !important;
+	}
+
+	// M: Remove container padding if set in settings panel
+	.container--push-down & {
+
+		margin-bottom: 24px;
+	}
+}
+
+// E: Container content wrapper
+.container__colour {
+
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+// M: Low opacity 75% - less transparent
+.container__colour--opacity-low {
+
+	opacity: 0.75;
+}
+
+// M: Mid opacity 50% - http://www.youtube.com/watch?v=DohRa9lsx0Q
+.container__colour--opacity-mid {
+
+	opacity: 0.5;
+}
+
+// M: High opacity 25% - more transparent
+.container__colour--opacity-high {
+
+	opacity: 0.25;
+}
