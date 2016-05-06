@@ -21,8 +21,6 @@
         .site-main__page-title {
             max-width: $max-width;
             margin: auto;
-            padding-left: 20px;
-            padding-right: 20px;
         }
 
         // Remove max-width when the the "full width" container setting is on
@@ -43,6 +41,11 @@
             max-width: 1000px;
             margin: auto;
             float: none !important;
+        }
+
+        .container--flush .content-block--text {
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
     } // end .has-pb-full-width-containers
