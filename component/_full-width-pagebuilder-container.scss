@@ -18,9 +18,16 @@
         // Set margin and padding back on
         .container,
         .container__content,
-        .site-main__page-title {
+        .site-main__page-title,
+        .site-footer {
             max-width: $max-width;
             margin: auto;
+
+            @media (max-width: $max-width + 40px) {
+                padding-left: 20px;
+                padding-right: 20px;
+
+            }
         }
 
         // Remove max-width when the the "full width" container setting is on
@@ -41,11 +48,6 @@
             max-width: 1000px;
             margin: auto;
             float: none !important;
-        }
-
-        .container--flush .content-block--text {
-            padding-left: 20px;
-            padding-right: 20px;
         }
 
     } // end .has-pb-full-width-containers
