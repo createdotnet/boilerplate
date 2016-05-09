@@ -1,13 +1,15 @@
 
 // Pagebuilder full width
 
-@mixin pagebuilder-full-width($page-container: "page-wrapper", $max-width: 1000px){
+@mixin pagebuilder-full-width($truly-full: true, $page-container: "page-wrapper", $max-width: 1000px, $page-padding: 20px){
 
     .has-pb-full-width-containers {
 
         // remove page padding - will be applied back to PB blocks
         .#{$page-container} {
-            padding: 0;
+            padding-left: 0;
+            padding-right: 0;
+            // max-width: 2000px;
         }
 
         // remove page max-width - will be applied back to PB blocks
@@ -15,18 +17,29 @@
             max-width: none;
         }
 
-        // Set margin and padding back on
+        // Set margin and max-width back on
         .container,
         .container__content,
-        .site-main__page-title,
-        .site-footer {
+        .site-main__page-title {
             max-width: $max-width;
             margin: auto;
+        }
 
-            @media (max-width: $max-width + 40px) {
-                padding-left: 20px;
-                padding-right: 20px;
+        // Put padding on text and headings
+        .container--flush .content-block--text,
+        .container--flush .content-block--heading,
+        .site-main__page-title {
 
+            @if ($truly-full == true) {
+
+                @media (max-width: $max-width + ($page-padding*2) ) {
+                    padding-left: $page-padding;
+                    padding-right: $page-padding;
+                }
+
+            } @else {
+                padding-left: $page-padding;
+                padding-right: $page-padding;
             }
         }
 
@@ -53,5 +66,3 @@
     } // end .has-pb-full-width-containers
 
 } // end @mixin
-
-@include  pagebuilder-full-width();
