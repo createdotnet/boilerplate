@@ -1,19 +1,23 @@
 
 // Pagebuilder full width
 
-@mixin pagebuilder-full-width($truly-full: true, $page-container: "page-wrapper", $max-width: 1000px, $page-padding: 20px){
+@mixin pagebuilder-full-width(  $truly-full: true,
+                                $max-width: 1000px,
+                                $page-padding: 20px,
+                                $page-container: ".page-wrapper",
+                                $content-container: $page-container " > .inner-constraint"){
 
     .has-pb-full-width-containers {
 
         // remove page padding - will be applied back to PB blocks
-        .#{$page-container} {
+        #{$page-container} {
             padding-left: 0;
             padding-right: 0;
             // max-width: 2000px;
         }
 
         // remove page max-width - will be applied back to PB blocks
-        .#{$page-container} > .inner-constraint {
+        #{$content-container} {
             max-width: none;
         }
 
