@@ -13,6 +13,7 @@
         #{$page-container} {
             padding-left: 0;
             padding-right: 0;
+
             // max-width: 2000px;
         }
 
@@ -27,6 +28,10 @@
         .site-main__page-title {
             max-width: $max-width;
             margin: auto;
+        }
+
+        .site-main__page-title {    
+            margin-bottom: .4em;
         }
 
         // Put padding on text and headings
@@ -52,12 +57,13 @@
             max-width: none;
         }
 
-
         // Sort out side columns
         &.wdk_columnCount_1 .site-main,
         &.wdk_columnCount_2 .site-main {
             width: 100% !important;
             padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin: 0;
         }
         .site-complementary--primary,
         .site-complementary--secondary {
