@@ -14,7 +14,9 @@
             padding-left: 0;
             padding-right: 0;
 
-            // max-width: 2000px;
+            // So we still have a max with on massive screens, stop background images stretching too much
+            max-width: $max-width * 2;
+            margin: auto;
         }
 
         // remove page max-width - will be applied back to PB blocks
