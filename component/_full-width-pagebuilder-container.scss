@@ -30,7 +30,7 @@
             margin: auto;
         }
 
-        .site-main__page-title {    
+        .site-main__page-title {
             margin-bottom: .4em;
         }
 
@@ -64,13 +64,16 @@
             padding-left: 0 !important;
             padding-right: 0 !important;
             margin: 0;
+            float: none;
         }
         .site-complementary--primary,
         .site-complementary--secondary {
             width: 100% !important;
-            max-width: 1000px;
+            max-width: $max-width;
             margin: auto;
             float: none !important;
+            padding-left: $page-padding;
+            padding-right: $page-padding;
         }
 
     } // end .has-pb-full-width-containers
