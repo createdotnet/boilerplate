@@ -1,0 +1,94 @@
+
+// Pagebuilder full width
+
+.has-pb-full-width-containers {
+
+    // remove page padding - will be applied back to PB blocks
+    #{$template-option-page-container-class} {
+        padding-left: 0;
+        padding-right: 0;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        // So we still have a max with on massive screens, stop background images stretching too much
+        @if ($template-option-truly-full == true) {
+            max-width: $template-option-max-width * 2;
+        }
+    }
+
+    // remove page max-width - will be applied back to PB blocks
+    #{$template-option-content-inner-class} {
+
+        padding-left: 0;
+        padding-right: 0;
+
+        @if ($template-option-truly-full == true) {
+            max-width: none;
+        }
+    }
+
+    // Set margin and max-width back on
+    .container {
+        width: auto;
+        margin-left: $template-option-gutter-size;
+        margin-right: $template-option-gutter-size;
+    }
+
+    .container--full-width.container--flush,
+    .container--full-width.container__content,
+    .site-main__page-title {
+        max-width: $template-option-max-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .site-main__page-title {
+        margin-bottom: .4em;
+    }
+
+    // Put padding on text and headings
+    .container--full-width.container--flush .content-block--text,
+    .container--full-width.container--flush .content-block--heading,
+    .site-main__page-title {
+
+        @if ($template-option-truly-full == true) {
+
+            @media (max-width: $template-option-max-width + ($template-option-gutter-size*2) ) {
+                padding-left: $template-option-gutter-size;
+                padding-right: $template-option-gutter-size;
+            }
+
+        } @else {
+            padding-left: $template-option-gutter-size;
+            padding-right: $template-option-gutter-size;
+        }
+    }
+
+    // Remove max-width when the the "full width" container setting is on
+    .container.container--full-width {
+        max-width: none;
+    }
+
+    // Sort out side columns
+    &.wdk_columnCount_1 .site-main,
+    &.wdk_columnCount_2 .site-main {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin: 0;
+        float: none;
+    }
+    .site-complementary--primary.site-complementary--primary,
+    .site-complementary--secondary.site-complementary--secondary {
+        width: 100% !important;
+        max-width: $template-option-max-width;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: $template-option-gutter-size;
+        float: none !important;
+        padding-left: $template-option-gutter-size;
+        padding-right: $template-option-gutter-size;
+    }
+
+} // end .has-pb-full-width-containers
