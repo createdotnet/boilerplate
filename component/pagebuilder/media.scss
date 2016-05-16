@@ -1,0 +1,281 @@
+/* ========================= //
+// PAGEBUILDER: MEDIA OBJECT //
+// ========================= */
+
+
+/*
+// Behavior: Abstracted media and text module
+// Dependencies: variables.scss clearfix.scss
+// Browser Support:
+// Further Reading:
+*/
+
+
+// TODO abstract this and add to the boilerplate
+%cf,
+%clearfix {
+
+	&:after {
+
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+// B: shared styling
+.media {
+
+	@extend %cf;
+
+	.content-blocks & {
+
+		// Remove bottom margin form .media objects in content blocks
+		// TODO review this - potentially a conflict of classes
+		// NOTE adding !important because of inuit.css
+		margin-bottom: 0 !important;
+	}
+}
+
+
+
+/* ======== //
+// ELEMENTS //
+// ======== */
+
+// E: Medium
+.media__medium {
+
+	margin-bottom: $template-option-gutter-size;
+}
+
+// E: Medium link
+.media__medium__link {
+
+	display: block;
+}
+
+// E: Copy
+.media__copy {
+
+	text-align: left !important; // Note: Override the left align for image based content blocks
+
+	// Remove the margin from the last item
+	:last-child {
+
+		margin-bottom: 0;
+	}
+}
+
+
+
+/* ========= //
+// MODIFIERS //
+// ========= */
+
+// The maths
+// TODO abstract this to a function
+
+// Fraction/Percentages
+$half: percentage(1/2);
+$third: percentage(1/3);
+$quarter: percentage(1/4);
+$fifth: percentage(1/5);
+$tenth: percentage(1/10);
+
+// Container content steps
+$containerContentsScaleStep2: ($half - $fifth) / 4;
+$containerContentsScaleStep3: ($half - $quarter) / 4;
+$containerContentsScaleStep4: ($half - $third) / 4;
+
+
+// M: Medium scaling media by percentages
+.media__medium--scale-down-100 {
+
+	width: 50%;
+
+	// NOTE The below all basically calculate to 50%
+
+	// // Container contains 2 content block
+	// [data-pb-items="2"] & {
+
+	// 	width: $fifth + ($containerContentsScaleStep2 * 4);
+	// }
+
+	// // Container contains 3 content block
+	// [data-pb-items="3"] & {
+
+	// 	width: $quarter + ($containerContentsScaleStep3 * 4);
+	// }
+
+	// // Container contains 4 content block
+	// [data-pb-items="4"] & {
+
+	// 	width: $third + ($containerContentsScaleStep4 * 4);
+	// }
+}
+
+.media__medium--scale-down-80 {
+
+	width: 40%;
+
+	// Container contains 2 content block
+	[data-pb-items="2"] & {
+
+		width: $fifth + ($containerContentsScaleStep2 * 3);
+	}
+
+	// Container contains 3 content block
+	[data-pb-items="3"] & {
+
+		width: $quarter + ($containerContentsScaleStep3 * 3);
+	}
+
+	// Container contains 4 content block
+	[data-pb-items="4"] & {
+
+		width: $third + ($containerContentsScaleStep4 * 3);
+	}
+}
+
+.media__medium--scale-down-60 {
+
+	width: 30%;
+
+	// Container contains 2 content block
+	[data-pb-items="2"] & {
+
+		width: $fifth + ($containerContentsScaleStep2 * 2);
+	}
+
+	// Container contains 3 content block
+	[data-pb-items="3"] & {
+
+		width: $quarter + ($containerContentsScaleStep3 * 2);
+	}
+
+	// Container contains 4 content block
+	[data-pb-items="4"] & {
+
+		width: $third + ($containerContentsScaleStep4 * 2);
+	}
+}
+
+.media__medium--scale-down-40 {
+
+	width: 20%;
+
+	// Container contains 2 content block
+	[data-pb-items="2"] & {
+
+		width: $fifth + ($containerContentsScaleStep2 * 1);
+	}
+
+	// Container contains 3 content block
+	[data-pb-items="3"] & {
+
+		width: $quarter + ($containerContentsScaleStep3 * 1);
+	}
+
+	// Container contains 4 content block
+	[data-pb-items="4"] & {
+
+		width: $third + ($containerContentsScaleStep4 * 1);
+	}
+}
+
+.media__medium--scale-down-20 {
+
+	width: 10%;
+
+	// Container contains 2 content block
+	[data-pb-items="2"] & {
+
+		width: $fifth;
+	}
+
+	// Container contains 3 content block
+	[data-pb-items="3"] & {
+
+		width: $quarter;
+	}
+
+	// Container contains 4 content block
+	[data-pb-items="4"] & {
+
+		width: $third;
+	}
+}
+
+// M: Float the image so the text wraps
+.media--wrap {
+
+	// E: default floating
+	.media__medium {
+
+		float: left;
+		margin-right: $template-option-gutter-size;
+
+		// Firefox: prevent the content form overflowing the component
+		max-width: 100%;
+	}
+}
+
+.media--wrap--reverse {
+
+	// E: default floating
+	.media__medium {
+
+		float: right;
+		margin-right: 0;
+		margin-left: $template-option-gutter-size;
+	}
+}
+
+// M: Make inline and grid mode
+.media--grid {
+
+	// Remove whitespace
+	font-size: 0;
+	line-height: 0;
+
+	// Offset
+	margin-left: -$template-option-gutter-size;
+
+	// E: Set default alignment and sizing
+	.media__ {
+
+		// E: Remove the bottom spacing
+		&medium {
+
+			margin-bottom: 0;
+		}
+
+		// E: reset the fontsize to base
+		&copy {
+
+			// TODO add these as a variables from the theme
+			@include font-size($template-option-font-size);
+			line-height: $template-option-line-height;
+		}
+
+		// E:
+		&copy,
+		&medium {
+
+			display: inline-block;
+			width: 50%;
+			vertical-align: top;
+			padding-left: $template-option-gutter-size;
+		}
+	}
+}
+
+.media--grid--reverse {
+
+	.media__medium {
+
+		float: right;
+	}
+}

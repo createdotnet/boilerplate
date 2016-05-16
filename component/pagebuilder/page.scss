@@ -1,0 +1,17 @@
+/*
+// TEMPORARY:
+// CSS Wizardry Grid flush modifier
+// TODO Add this to the page builder css build or similar
+// TODO Change markup to grid--full as per css-wizardry grid modifier class
+*/
+
+// M: remove gutters from grid items
+.grid--flush {
+
+	margin-left: 0 !important;
+
+	> .grid__item {
+
+		padding-left: 0 !important;
+	}
+}
