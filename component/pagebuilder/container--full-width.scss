@@ -1,7 +1,7 @@
 
 // Pagebuilder full width
 
-.has-pb-full-width-containers {
+body.has-pb-full-width-containers {
 
     // remove page padding - will be applied back to PB blocks
     #{$template-option-page-container-class} {
@@ -29,15 +29,9 @@
     }
 
     // Set margin and max-width back on
-    .container {
-        width: auto;
-        margin-left: $template-option-gutter-size;
-        margin-right: $template-option-gutter-size;
-    }
-
-    .container--full-width.container--flush,
-    .container--full-width.container__content,
+    .container__content,
     .site-main__page-title {
+        width: auto;
         max-width: $template-option-max-width;
         margin-left: auto;
         margin-right: auto;
@@ -48,8 +42,8 @@
     }
 
     // Put padding on text and headings
-    .container--full-width.container--flush .content-block--text,
-    .container--full-width.container--flush .content-block--heading,
+    .container--flush .content-block--text,
+    .container--flush .content-block--heading,
     .site-main__page-title {
 
         @if ($template-option-truly-full == true) {
@@ -70,7 +64,9 @@
         max-width: none;
     }
 
-    // Sort out side columns
+
+    // Side columns
+
     &.wdk_columnCount_1 .site-main,
     &.wdk_columnCount_2 .site-main {
         width: 100% !important;
