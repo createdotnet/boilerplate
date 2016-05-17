@@ -44,6 +44,7 @@ body.has-pb-full-width-containers {
     // Put padding on text and headings
     .container--flush .content-block--text,
     .container--flush .content-block--heading,
+    .container--flush .content-block--image_text,
     .site-main__page-title {
 
         @if ($template-option-truly-full == true) {
