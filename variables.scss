@@ -24,3 +24,10 @@ $template-option-major-breakpoint: 775px !default;
 // Specify the maximum width of the template
 // Note: For full width use 100%
 $template-option-max-width: 1000px !default;
+
+// Specify if a templates content can ever go truly full width, of its constrained by a border or other style.
+$template-option-truly-full: false !default;
+
+// Class names for the main page content and the content inner constraint.
+$template-option-page-container-class: ".page-wrapper" !default;
+$template-option-content-inner-class: $template-option-page-container-class " > .inner-constraint" !default;
