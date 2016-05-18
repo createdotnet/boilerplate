@@ -70,20 +70,25 @@ body.has-pb-full-width-containers {
 
     &.wdk_columnCount_1 .site-main,
     &.wdk_columnCount_2 .site-main {
-        width: 100% !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+
+        width: 100%;
         margin: 0;
         float: none;
+
+        // For specificity
+        &.site-main {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
     .site-complementary--primary.site-complementary--primary,
     .site-complementary--secondary.site-complementary--secondary {
-        width: 100% !important;
+        width: 100%;
         max-width: $template-option-max-width;
         margin-left: auto;
         margin-right: auto;
         margin-top: $template-option-gutter-size;
-        float: none !important;
+        float: none;
         padding-left: $template-option-gutter-size;
         padding-right: $template-option-gutter-size;
     }
