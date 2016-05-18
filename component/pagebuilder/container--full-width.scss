@@ -28,8 +28,16 @@ body.has-pb-full-width-containers {
         }
     }
 
+
+    .container--full-width .container {
+        width: 100%;
+        max-width: none;
+    }
+
+
     // Set margin and max-width back on
-    .container__content,
+    .container,
+    .container--full-width .container__content,
     .site-main__page-title {
         width: auto;
         max-width: $template-option-max-width;
@@ -46,6 +54,9 @@ body.has-pb-full-width-containers {
     .container--flush .content-block--heading,
     .container--flush .content-block--image_text,
     .site-main__page-title {
+
+        padding-top: $template-option-gutter-size;
+        padding-bottom: $template-option-gutter-size;
 
         @if ($template-option-truly-full == true) {
 
