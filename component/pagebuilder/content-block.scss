@@ -143,10 +143,7 @@
 	font-size: 0;
 }
 
-.content-block--image.square,
-.content-block--image.landscape,
-.content-block--image.portrait,
-.content-block--image.circle {
+%cropped-image {
 
 	position: relative;
 	height: 0;
@@ -156,24 +153,35 @@
 		width: 100%;
 		position: absolute;
 		left: 0;
-		object-fit: cover;
 	}
 }
 
+.content-block--image.contain img {
+	object-fit: contain;
+	object-position: 50% 50%;
+
+}
+.content-block--image.cover img {
+	object-fit: cover;
+}
 
 .content-block--image.square {
+	@extend %cropped-image;
 	padding-bottom: 100%;
 }
 
 .content-block--image.landscape {
-  padding-bottom: 50%;
+	@extend %cropped-image;
+	padding-bottom: 50%;
 }
 
 .content-block--image.portrait {
-  padding-bottom: 150%;
+	@extend %cropped-image;
+	padding-bottom: 150%;
 }
 
 .content-block--image.circle {
+	@extend %cropped-image;
 	padding-bottom: 100%;
 	img {
 		border-radius: 100%;
