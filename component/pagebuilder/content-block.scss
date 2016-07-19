@@ -143,6 +143,43 @@
 	font-size: 0;
 }
 
+.content-block--image.square,
+.content-block--image.landscape,
+.content-block--image.portrait,
+.content-block--image.circle {
+
+	position: relative;
+	height: 0;
+
+	img {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+
+.content-block--image.square {
+	padding-bottom: 100%;
+}
+
+.content-block--image.landscape {
+  padding-bottom: 50%;
+}
+
+.content-block--image.portrait {
+  padding-bottom: 150%;
+}
+
+.content-block--image.circle {
+	padding-bottom: 100%;
+	img {
+		border-radius: 100%;
+	}
+}
+
 
 
 /*
