@@ -160,9 +160,15 @@
 	object-fit: contain;
 	object-position: 50% 50%;
 
+	// For the object-fit polyfill js
+	font-family: 'object-fit: contain; object-position: 50% 50%;';
+
 }
 .content-block--image.cover img {
 	object-fit: cover;
+
+	// For the object-fit polyfill js
+	font-family: 'object-fit: cover;';
 }
 
 .content-block--image.square {
