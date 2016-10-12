@@ -1,0 +1,15 @@
+// ==================== //
+// Layout: footer bleed //
+// ==================== //
+
+body {
+	margin: 0;
+}
+
+.structure__item--header,
+.structure__item--page,
+.structure__item--footer .structure__item__utility {
+
+	max-width: $template-option-max-width;
+	margin: auto;
+}

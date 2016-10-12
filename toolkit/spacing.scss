@@ -1,0 +1,23 @@
+
+// Spacing Function
+//
+// 
+
+// Usage: multiply the spacing size to define the scale of spacing
+// Example:
+//
+// $template-option-spacing-size: 4px;
+//
+// spacing(1) = 4px
+// spacing(2) = 8px
+// spacing(3) = 12px
+// spacing(4) = 16px
+// spacing(5) = 20px
+// spacing(6) = 24px
+// spacing(7) = 28px
+// spacing(8) = 32px
+
+@function spacing($function-multiply-value){
+
+	@return ($template-option-spacing-size * $function-multiply-value)
+}

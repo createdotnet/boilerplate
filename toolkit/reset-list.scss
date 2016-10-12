@@ -1,0 +1,25 @@
+/* ========== //
+// RESET LIST //
+// ========== */
+
+
+/*
+// Behavior: Remove default user agent list styles.
+// Dependencies: None
+*/
+
+// Mixin
+@mixin reset-list {
+
+	margin-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+// Define the class
+// TODO should this be in a separate extend file for us?
+.reset-list {
+
+	// Extend the mixin
+	@include reset-list();
+}

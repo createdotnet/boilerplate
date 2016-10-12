@@ -1,0 +1,22 @@
+/* =========== //
+// FLUID MEDIA //
+// =========== */
+
+
+/*
+// Behavior: Prevent images, video and other rich media from overflowing it’s parent container and enable it to scale under different widths
+// Dependencies: None
+// Browser Support: http://caniuse.com/#feat=minmaxwh
+// Further Reading: http://alistapart.com/article/fluid-images
+*/
+
+
+img,
+embed,
+// object, Causing issues with the flash 'slideshow' collapsing.
+video,
+input[type="image"] {
+
+	max-width: 100%;
+	height: auto;
+}

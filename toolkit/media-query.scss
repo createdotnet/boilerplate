@@ -1,0 +1,30 @@
+/* ============================================= //
+// MIXIN: MEDIA QUERY + LEGACY IE LAYOUT SUPPORT //
+// ============================================= */
+
+
+/*
+// Behavior: 
+// Dependencies: 
+// Browser Support: 
+// Further Reading: 
+*/
+
+
+@mixin media-query($mixin-breakpoint-value, $mixin-min-or-max: min,$mixin-support-legacy-ie: false) {
+
+	@if $mixin-support-legacy-ie == true {
+		.lt-ie9 & {
+			@content;
+		}
+	}
+
+	@if $mixin-min-or-max == max {
+		$mixin-breakpoint-value: $mixin-breakpoint-value - 1px;
+	}
+
+	@media only screen and (#{$mixin-min-or-max}-width: $mixin-breakpoint-value) {
+		@content;
+	}
+
+}

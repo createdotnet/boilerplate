@@ -1,0 +1,17 @@
+/* =============== //
+// CLEARFIX LEGACY //
+// =============== */
+
+
+/*
+// Behavior: Add legacy IE browser support to the clearfix module
+// Dependencies: clearfix.scss
+// Browser Support: http://caniuse.com/#feat=css-gencontent
+// Further Reading: http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+
+
+.clearfix {
+
+	*zoom: 1;
+}

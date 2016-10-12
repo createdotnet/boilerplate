@@ -1,0 +1,175 @@
+
+// This layout mixin provides a basic wireframe layout for the header, page-wrapper and footer.
+// There are currently 5 basic layout options availale, they should cover most use cases.
+//
+// 1. Side Menu - like avenue
+// 2. full bleed - top menu, stripes of content that stretch 100% width. Works nice with the full bleed pagebuilder option
+// 3. inner contained - top menu, all content and background colours are contained within the templates max width.
+// 4. a bit like "inner contained" but with a full width (but constrained) footer - top menu, like picnic
+// 5. a bit like "inner contained" but with a full width header - top menu, like metro
+
+// This will be set to true within any of the below @if statements, its used to throw a warning if its missing or not a valid option.
+$layout-is-set: false !default;
+
+
+@mixin template-layout {
+
+	// ============ //
+	// 1. Side Menu //
+	// ============ //
+
+	@if $layout == 1 {
+
+		// Tell the template setup that the layout has been successfully set
+		$layout-is-set: true !global;
+
+		// allow for a full height navigation / header panel
+		html,
+		body,
+		.structure,
+		.structure__item--header {
+
+			height: 100%;
+		}
+
+		// set the side bar width
+		.structure__item--header {
+
+			width: 200px;
+			float: left;
+		}
+
+		// offset the page content by the width of the side header
+		.structure__item--page,
+		.structure__item--footer {
+			margin-left: 200px;
+		}
+		
+		.structure__item--footer {
+			// Because floats are odd, this stops the footer sitting underneath the left menu.
+			overflow: hidden;
+		}
+
+		// Set the template max width and center it on the page
+		.structure {
+
+			max-width: $template-option-max-width;
+			margin: auto;
+		}
+
+	} // end @if $layout
+
+
+	// ============= //
+	// 2. full bleed //
+	// ============= //
+
+	@if $layout == 2 {
+
+		// Tell the template setup that the layout has been successfully set
+		$layout-is-set: true !global;
+		
+		.structure__item__utility {
+
+			max-width: $template-option-max-width;
+			margin: auto;
+		}
+
+	} // end @if $layout
+
+
+	// ================== //
+	// 3. inner contained //
+	// ================== //
+
+	@if $layout == 3 {
+
+		// Tell the template setup that the layout has been successfully set
+		$layout-is-set: true !global;
+
+		.structure {
+
+			max-width: $template-option-max-width;
+			margin: auto;
+		}
+
+	} // end @if $layout
+
+
+	// =============== //
+	// 4. footer bleed //
+	// =============== //
+
+	@if $layout == 4 {
+
+		// Tell the template setup that the layout has been successfully set
+		$layout-is-set: true !global;
+
+		.structure__item--header,
+		.structure__item--page,
+		.structure__item--footer .structure__item__utility {
+
+			max-width: $template-option-max-width;
+			margin: auto;
+		}
+
+	} // end @if $layout
+
+
+	// =============== //
+	// 5. header bleed //
+	// =============== //
+
+	@if $layout == 5 {
+
+		// Tell the template setup that the layout has been successfully set
+		$layout-is-set: true !global;
+
+		.structure__item--page .structure__item__utility,
+		.structure__item--footer .structure__item__utility {
+
+			max-width: $template-option-max-width;
+			margin: auto;
+		}
+
+	} // end @if $layout
+
+
+	// ====== //
+	// ERRORS //
+	// ====== //
+
+	// Making sure the layout choice is valid
+	@if $layout-is-set != true {
+		
+		@warn "You haven't set a layout type or the layout type selected is not valid. Make sure to set the $layout variable in /template-setup.scss";
+	}
+
+} // end @mixin template-layout
+
+
+
+// Mixin: set page builder containers to full bleed
+// only works if .site-wrapper is 100% width
+// only works if side columns are horizontal (not really "side" columns)
+@mixin pagebuilder-full-bleed {
+
+	@if $layout == 2 {
+
+		// remove any constraints
+		.structure__item--page,
+		.structure__item--page .structure__item__utility {
+			width: 100%;
+		}
+
+		// Apply contraint to page builder content
+		.container__content {
+			max-width: $template-option-max-width;
+			margin: auto;
+		}
+	} 
+	@else {
+		@warn "Warning: You've included the 'pagebuilder-full-bleed' mixin but your $layout type does not support this option.";
+	}
+} // end @mixin pagebuilder-full-bleed
+
