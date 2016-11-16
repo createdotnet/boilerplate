@@ -17,22 +17,12 @@
 	width: 100%;
 	position: relative;
 
-	// Set the default for background image
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-
 	// Reset line-height
 	// NOTE set this where needed on content-block--[types]
 	line-height: 0;
 }
 
-// M: Set the container background image to tiled
-.container--image-tile {
 
-	background-repeat: repeat;
-	background-size: auto;
-}
 
 // E:
 .container__content {
@@ -57,7 +47,9 @@
 }
 
 // E: Container content wrapper
-.container__colour {
+.container__theme,
+.container__theme__image,
+.container__theme__colour {
 
 	display: block;
 	position: absolute;
@@ -68,20 +60,36 @@
 	left: 0;
 }
 
+// E: Container content wrapper
+.container__theme__image {
+
+	// Set the default for background image
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	// M: Set the container background image to tiled
+	.container--image-tile & {
+
+		background-repeat: repeat;
+		background-size: auto;
+	}
+}
+
 // M: Low opacity 75% - less transparent
-.container__colour--opacity-low {
+.container__theme__colour--opacity-low {
 
 	opacity: 0.75;
 }
 
 // M: Mid opacity 50% - http://www.youtube.com/watch?v=DohRa9lsx0Q
-.container__colour--opacity-mid {
+.container__theme__colour--opacity-mid {
 
 	opacity: 0.5;
 }
 
 // M: High opacity 25% - more transparent
-.container__colour--opacity-high {
+.container__theme__colour--opacity-high {
 
 	opacity: 0.25;
 }
