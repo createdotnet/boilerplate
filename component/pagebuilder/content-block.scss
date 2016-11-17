@@ -141,9 +141,6 @@
 	// Remove the whitespace below the image
 	line-height: 0;
 	font-size: 0;
-}
-
-%cropped-image {
 
 	position: relative;
 	height: 0;
@@ -156,7 +153,7 @@
 	}
 }
 
-.content-block--image--contain img {
+.content-block:not(.content-block--image--fill) img {
 	object-fit: contain;
 	object-position: 50% 50%;
 	max-height: 100%;
@@ -165,45 +162,39 @@
 	font-family: 'object-fit: contain; object-position: 50% 50%;';
 
 }
-.content-block--image--cover img {
+.content-block--image--fill img {
 	object-fit: cover;
 
 	// For the object-fit polyfill js
 	font-family: 'object-fit: cover;';
 }
 
+
+.content-block--image--original {
+	height: auto;
+	img {
+		position: static;
+	}
+}
+
 .content-block--image--square {
-	@extend %cropped-image;
 	padding-bottom: 100%;
 }
 
-.content-block--image--landscape {
-	@extend %cropped-image;
-	padding-bottom: 50%;
-}
-
-.content-block--image--portrait {
-	@extend %cropped-image;
-	padding-bottom: 150%;
-}
-
-.content-block--image--extra-landscape {
-	@extend %cropped-image;
-	padding-bottom: 25%;
-}
-
-.content-block--image--extra-portrait {
-	@extend %cropped-image;
-	padding-bottom: 200%;
-}
-
 .content-block--image--circle {
-	@extend %cropped-image;
 	padding-bottom: 100%;
 	img {
 		border-radius: 100%;
 	}
 }
+
+.content-block--image--landscape3x2 { padding-bottom: 66.666%; }
+.content-block--image--landscape16x9 { padding-bottom: 56.25%; }
+.content-block--image--landscape3x1 { padding-bottom: 33.333%; }
+
+.content-block--image--portrait2x3 { padding-bottom: 150%; }
+.content-block--image--portrait9x16 { padding-bottom: 177.777%; }
+.content-block--image--portrait1x3 { padding-bottom: 300%; }
 
 
 
