@@ -141,6 +141,16 @@
 	// Remove the whitespace below the image
 	line-height: 0;
 	font-size: 0;
+}
+
+.content-block--image--square,
+.content-block--image--circle,
+.content-block--image--landscape3x2,
+.content-block--image--landscape16x9,
+.content-block--image--landscape3x1,
+.content-block--image--portrait2x3,
+.content-block--image--portrait9x16,
+.content-block--image--portrait1x3 {
 
 	position: relative;
 	height: 0;
@@ -151,17 +161,19 @@
 		position: absolute;
 		left: 0;
 	}
+
+	&:not(.content-block--image--fill) img {
+		object-fit: contain;
+		object-position: 50% 50%;
+		max-height: 100%;
+
+		// For the object-fit polyfill js
+		font-family: 'object-fit: contain; object-position: 50% 50%;';
+
+	}
 }
 
-.content-block:not(.content-block--image--fill) img {
-	object-fit: contain;
-	object-position: 50% 50%;
-	max-height: 100%;
 
-	// For the object-fit polyfill js
-	font-family: 'object-fit: contain; object-position: 50% 50%;';
-
-}
 .content-block--image--fill img {
 	object-fit: cover;
 
