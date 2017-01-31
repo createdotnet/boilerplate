@@ -1,0 +1,15 @@
+
+// Form Base Styles
+
+.form-fields {
+	@include reset-list();
+
+	label {
+		display: block;
+	}
+}
+
+.text-input {
+	font-size: 1em;
+    padding: 0.4em;
+}

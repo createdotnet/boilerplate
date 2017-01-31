@@ -1,0 +1,20 @@
+
+// Blog styles / resets
+
+.blog-archive,
+.blog-archive ul {
+	@include reset-list();
+}
+.blog-archive ul {
+		padding-left: 1em;
+}
+
+.blog-archive__toggle {
+	background-image: none !important;
+}
+
+// Hide items in the archive side col untill they are expanded
+.blog-archive-month--collapsed .blog-archive-post-root,
+.blog-archive-year--collapsed .blog-archive-month-root {
+	display: none;
+}

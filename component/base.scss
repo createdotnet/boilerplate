@@ -7,3 +7,8 @@ body {
 	font-size: $template-option-font-size;
 	line-height: $template-option-line-height;
 }
+
+
+a {
+	color: colour(link_text);
+}
