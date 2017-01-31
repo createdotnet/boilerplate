@@ -1,0 +1,128 @@
+
+// NAVIGATION DROPDOWN STACKED
+
+// This mixin will put the navigation inline with drop downs on hover.
+// This mixin can be included in a media query if required.
+
+// $size 							- sets the icon size
+
+@mixin navigation--dropdown--inline($size: null) {
+
+	// ======== //
+	// NAV MAIN //
+	// ======== //
+
+	// Hide the drop down toggle arrows.
+	// They are included only on the dropdown--stacked option mixin
+	.menu__item__toggle {
+		display: none;
+	}
+
+	// ======== //
+	// NAV LIST //
+	// ======== //
+
+	.menu--site {
+
+		width: 100%;
+		position: relative;
+
+		// Modifier: Depth 0, top level
+		&--depth-0 {
+
+			@include whitespace-remove;
+			white-space: nowrap;
+		}
+
+		// Modifier: Depth 1
+		&--depth-1 {
+
+			width: auto;
+		}
+
+	}
+
+	// Context: Dropdown menu list
+	.menu__item--has-sub > .dropdown-item {
+
+		position: absolute;
+		left: -9999em;
+
+	}
+
+	// Context: Direct child of modifier --depth-1
+	.nav-main__list--depth-1 .nav-main__list {
+
+		width: auto;
+
+	}
+
+
+	// Modifier: Item has sub-menu
+	.menu__item--has-sub {
+
+		position: relative;
+		z-index: index($z-index-list, nav-drop-down);
+
+		// Interaction: Hover
+		&:hover > .dropdown-item {
+			display: block;
+			left: 0;
+			top: 100%;
+		}
+	}
+
+
+	// Context: Direct child of modifier --depth-0
+	.menu--depth-0 > .menu__item {
+
+		display: inline-block;
+		position: relative;
+
+		@include whitespace-reset;
+
+	}
+
+	// Context: Direct child of modifier --depth-1
+	.nav-main__list--depth-1 .nav-main__item {
+
+		display: block;
+
+	}
+
+
+
+	// ======== //
+	// NAV LINK //
+	// ======== //
+
+	.menu__link {
+		text-decoration: none;
+
+		// Shared styles
+		width: 100%;
+		display: block;
+
+	}
+
+	// Context: direct child of a sub category
+	.nav-main__item--has-sub > .nav-main__link {
+
+		// TODO extend the mixin to pass custom characters
+		&:after {
+			content: "\00bb"; // encoded special character "»"
+
+		}
+	}
+
+
+	// Context: Direct child of modifier --depth-0
+	.nav-main__list--depth-1 .nav-main__link {
+
+		display: block;
+		white-space: nowrap;
+
+	}
+
+
+} // End: Mixin

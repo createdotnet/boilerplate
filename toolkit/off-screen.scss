@@ -18,7 +18,8 @@
 // Define the class
 // TODO should this be in a separate extend file for us?
 // TODO should this be prefixed with helper- or accesibility- ?
-.off-screen {
+.off-screen,
+.visuallyhidden {
 
 	// Extend the mixin
 	@include off-screen();

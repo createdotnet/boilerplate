@@ -1,0 +1,27 @@
+
+// Header Shop drop downs
+
+.site-navigation__item--shop {
+
+	position: relative;
+
+	.menu__item {
+		// Put icons next to each other
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.dropdown-toggle__text {
+		// Hide the text labels
+		display: none;
+	}
+}
+
+
+// Site logo / name
+.site-navigation__item--logo {
+	a {
+		color: colour(logo_text);
+		text-decoration: none;
+	}
+}

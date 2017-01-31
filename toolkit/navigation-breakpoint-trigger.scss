@@ -1,41 +1,28 @@
 
 // Navigation Breakpoint Trigger
-//
-// 
 
-@mixin navigation-breakpoint-trigger($mixin-debug: false, $mixin-minor-trigger-string: minor, $mixin-major-trigger-string: major) {
+// This element outputs the breakpoint we are currently at in a hidden `:before` element.
+// We can then check that with the javacsript to enable media queries in javascript. Sort of.
 
-	@if($mixin-debug == true) {
+.utility-navigation-breakpoint-trigger:before {
 
-		display: block;
+	position: absolute;
+	left: -9999px;
+	font-size: 0;
+	height: 0;
+	width: 0;
+	overflow: hidden;
 
-		@at-root .utility-js-triggers {
-
-			position: fixed;
-			bottom: 0;
-			z-index: 1000;
-			width: 100%;
-		}
-
-	} @else {
-
-		position: absolute;
-		left: -9999px;
-		font-size: 0;
-		height: 0;
-		width: 0;
-		overflow: hidden;
-	}
 
 	// Lower UI context
 	@include media-query($template-option-major-breakpoint, max) {
 
-		content: "#{$mixin-minor-trigger-string}";
+		content: "Minor";
 	}
 
 	// Upper UI context
 	@include media-query($template-option-major-breakpoint, min) {
 
-		content: "#{$mixin-major-trigger-string}";
+		content: "Major";
 	}
 }

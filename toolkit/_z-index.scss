@@ -1,0 +1,19 @@
+
+// Z-Index
+
+// Using Sass lists for z-index means that new items can added in the list and it will re assign the z-index of everything in that list - without manually having to change each property.
+// They can be called in the class using a sass index. It outputs the position in the list as a number.
+// eg. 	.navigation {
+//    		z-index: index($z-index-list, nav-main);
+// 		}
+// For more info see http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+
+// Feel free to overide this list in your theme. Existing items may need to be duplicated as items cannot be added to the default list.
+
+$z-index-list:
+	sold-out-banner,
+	nav-main,
+	nav-drop-down,
+	nav-shop,
+	modal,
+!default;

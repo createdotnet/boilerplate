@@ -4,10 +4,10 @@
 
 
 /*
-// Behavior: 
-// Dependencies: 
-// Browser Support: 
-// Further Reading: 
+// Behavior:
+// Dependencies:
+// Browser Support:
+// Further Reading:
 */
 
 
@@ -27,8 +27,14 @@
 	color: inherit;
 }
 
-.validation--negative {}
+.validation--negative {
+	color: red;
+}
 
-.validation--positive {}
+.validation--positive {
+	color: green;
+}
 
-.validation--passive {}
+.validation--passive {
+	color: yellow;
+}

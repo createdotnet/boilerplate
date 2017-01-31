@@ -1,0 +1,35 @@
+
+// Category Layouts Grid Sizes
+//
+// The Sass map in variables.scss (or anywhere it has been overwritten) is looped over in the below code in order to create the responsive width classes for the category tile layout.
+// The 4 sizes correspond to the 4 available in the application using the range slider.
+
+@mixin category-layout--tile($map-name){
+
+	// First layer of the sass map
+	@each $column-count, $layout-sizes in $map-name {
+
+		// Create the .wdk_columnCount_x class
+		&.#{$column-count} {
+
+			// Third layer of the sass map
+			@each $layout-size, $width in $layout-sizes {
+				.product-summary-list--tile--#{$layout-size} .grid__item {
+					width: $width;
+				}
+
+			}
+
+		} // End the .wdk_columnCount_x class
+
+	} // End @each
+
+}
+
+// Nested in body as this is where the column count classes are applied
+body {
+
+	@media (min-width: $template-option-major-breakpoint) {
+		@include category-layout--tile($cat-layout-lap);
+	}
+}

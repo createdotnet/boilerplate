@@ -1,0 +1,56 @@
+
+// Product Page Base Styles
+//
+
+.product-item__details,
+.product-item__gallery__image-list {
+	@include reset-list();
+}
+
+// Layout
+.product .grid__item {
+	@media (max-width: $template-option-major-breakpoint) {
+		width: 100%;
+	}
+}
+
+// Product image
+.product-item__gallery__image-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2em;
+
+	height: 500px;
+	position: relative;
+
+	.photo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+// Multiple product image buttons
+.product-item__gallery__image-thumb {
+
+	cursor: pointer;
+
+	// put them next to each other
+	display: inline-block;
+
+	// background image is inline in the markup
+    background-size: cover;
+
+	width: 4em;
+	height: 4em;
+
+	span {
+		@include off-screen();
+	}
+}
+
+// TODO: could go somewhere else
+.photo--lightbox {
+	 cursor: zoom-in;
+}

@@ -1,0 +1,33 @@
+
+// Output the navigation mixins in to useable layout styles.
+
+// Top menu
+@if( $template-option-navigation-position == 'top'){
+
+	// Mobile menu
+	@media (max-width: $template-option-major-breakpoint) {
+		@include navigation--dropdown--stacked();
+	}
+
+	// Non-mobile menu
+	@media (min-width: $template-option-major-breakpoint) {
+		@include navigation--dropdown--inline();
+
+		.site-navigation__item--menu {
+			// Hide the hamburge
+			> .dropdown-toggle {
+				display: none;
+			}
+
+			// Show the main menu even though the toggle hasn't been activated
+			> .dropdown-item {
+				display: block;
+			}
+		}
+	}
+
+}
+// Side menu
+@else {
+	@include navigation--dropdown--stacked();
+}

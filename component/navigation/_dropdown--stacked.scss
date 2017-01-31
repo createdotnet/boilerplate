@@ -1,0 +1,120 @@
+
+// NAVIGATION DROPDOWN STACKED
+
+// This mixin will throw the navigation in to a stacked layout with up and down arrow icons to open and close sub sections.
+// This mixin can be included in a media query. For example, many templates will use this pattern on mobile breakpoints, side menu layouts will use it on all breakpoints.
+
+// $size 							- sets the icon size
+// $mixin-navigation-spacing-unit	-
+// $depth 							-
+
+@mixin navigation--dropdown--stacked($size: null, $depth: null, $mixin-navigation-spacing-unit: $template-option-spacing-size) {
+
+	// Menu <UL>
+	.menu--site {
+
+		// Context: Direct child of a sub-menu
+		.menu__item--has-sub > & {
+
+			margin-left: ($mixin-navigation-spacing-unit)*3;
+
+		}
+
+		// Modifier: JS added class to close menu
+		&--closed {
+
+			height: 0;
+			overflow: hidden;
+
+		}
+
+	}
+
+
+	// NAV ITEM
+
+	.menu__item {
+
+		// Mobile first
+		width: 100%;
+
+		// Ensure its not inline-block, and as such make items stacked
+		display: block;
+
+		// Modifier: Item has sub-menu
+		&--has-sub {
+
+			position: relative;
+
+		}
+
+	}
+
+
+	// NAV LINK
+
+	.menu__link {
+
+		// remove link underline from all menu items
+		text-decoration: none;
+
+		display: block;
+		width: 100%;
+		padding-left: ($mixin-navigation-spacing-unit)*3;
+
+		// Stop text wrapping on to another line
+		white-space: nowrap;
+		-ms-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+	} // end .nav-main__link
+
+
+
+	// JAVASCRIPT TOGGLES
+
+	.js-nav-main__item__toggle {
+
+		// Context: Browser has JS
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: table;
+		text-align: center;
+		text-decoration: none;
+
+		// E: drop down arrows
+		.i:before {
+
+			font-size: 16px;
+			display: table-cell;
+			vertical-align: middle;
+
+		}
+
+		// Show and hide the up / down arrow icons when drop down is toggled / active
+		.i-up {
+			display: none;
+		}
+		&.js-nav-main__item__toggle--active {
+			.i-up {
+				display: table-cell;
+			}
+			.i-down {
+				display: none;
+			}
+		}
+
+		// Context: no javascript
+		// Full menu is shown so drop down toggles are not required
+		.no-js & {
+
+			display: none;
+
+		}
+
+	} // end .js-nav-main__item__toggle
+
+
+} // end @mixin

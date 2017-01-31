@@ -1,0 +1,11 @@
+
+// Basic toggling of content.
+// Works with the JS to add remove classes
+
+.dropdown-item {
+	display: none;
+
+	.dropdown-toggle--active + & {
+		display: block;
+	}
+}

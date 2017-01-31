@@ -1,0 +1,16 @@
+
+// Product Summary Base Styles
+//
+
+.product-summary {
+	position: relative;
+	margin-bottom: 1em;
+}
+
+.product-summary__sale-banner {
+	position: absolute;
+}
+
+.product-summary__details {
+	@include reset-list();
+}

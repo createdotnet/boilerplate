@@ -1,0 +1,44 @@
+
+// Footer Base Styles
+
+.footer--site__item {
+
+	// Hide icon descriptions
+	.image-text,
+	.icon-text {
+		@include off-screen();
+	}
+
+	.list {
+		@include reset-list();
+		> li {
+			display: inline-block;
+		}
+	}
+}
+
+.footer--site__item--payment {
+
+	// Scale the card logo SVG's down to a resonasble size
+	img {
+		max-width: 50px; // an arbitury number to stop things getting ridiculous, feel free to override
+		height: auto; // IE wont scale the SVG by width alone like you'd expect.
+	}
+}
+
+.footer--site__item--newsletter {
+
+	.form__feedback {
+		display: none;
+	}
+
+	.form--failed .form__feedback--failed {
+		display: block;
+	}
+	.form--success .form__feedback--success {
+		display: block;
+	}
+	.form--progress .form__feedback--progress {
+		display: block;
+	}
+}

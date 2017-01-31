@@ -1,49 +1,9 @@
 
 // Headings Mixin
 //
+// For the design studio 'heading scale' option
 // Creates a typographic scale for headings using a choice of typographic scales, taken from http://type-scale.com/
-// Example Usage: @include heading-size( $heading--med );
-
-// major-second
-$heading--small: (
-	alpha: 1.602,
-	beta: 1.424,
-	gamma: 1.266,
-	delta: 1.125,
-	epsilon: 1.063,
-	zeta: 1
-);
-
-// minor-third
-$heading--med: (
-	alpha: 2.074,
-	beta: 1.728,
-	gamma: 1.44,
-	delta: 1.2,
-	epsilon: 1.1,
-	zeta: 1
-);
-
-// perfect-fourth
-$heading--large: (
-	alpha: 3.157,
-	beta: 2.369,
-	gamma: 1.777,
-	delta: 1.333,
-	epsilon: 1.166,
-	zeta: 1
-);
-
-// augmented-fourth
-$heading--x-large: (
-	alpha: 3.998,
-	beta: 2.827,
-	gamma: 1.999,
-	delta: 1.414,
-	epsilon: 1.207,
-	zeta: 1
-);
-
+// The $heading--[size] vars are Sass maps set in boilerplate/variables.scss and can be redefined to make a templates options bigger, smaller, more varied etc
 
 .heading {
 	margin-top: 0;
@@ -51,6 +11,7 @@ $heading--x-large: (
 	line-height: 1.2;
 }
 
+// Mixin to convert heading scale variable to actual font sizes
 @mixin heading-size( $mixin-scale: $heading--small ){
 
 	@each $mixin-heading, $mixin-size in $mixin-scale {
@@ -63,3 +24,23 @@ $heading--x-large: (
 
 	} // end @each
 } // end @mixin
+
+
+//
+// Output the font sizes
+
+// fallback / default
+@include heading-size( $heading--med );
+
+.heading--small {
+	@include heading-size( $heading--small );
+}
+.heading--med {
+	@include heading-size( $heading--med );
+}
+.heading--lrg {
+	@include heading-size( $heading--large );
+}
+.heading--x-lrg {
+	@include heading-size( $heading--x-large );
+}
