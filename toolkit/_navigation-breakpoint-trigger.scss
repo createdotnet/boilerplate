@@ -17,12 +17,12 @@
 	// Lower UI context
 	@include media-query($template-option-major-breakpoint, max) {
 
-		content: "Minor";
+		content: "minor";
 	}
 
 	// Upper UI context
 	@include media-query($template-option-major-breakpoint, min) {
 
-		content: "Major";
+		content: "major";
 	}
 }
