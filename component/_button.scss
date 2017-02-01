@@ -1,0 +1,21 @@
+
+// Base Button styles / resets
+
+.wdk_live-button {
+	// Reset
+	background-image: none;
+	border: 1px solid;
+	font-size: 1em;
+	padding: .4em .7em;
+
+	// Style
+	background-color: colour(buttonbg);
+	color: colour(buttontxt);
+
+	// Design Studio 'Button Style' option
+	.button--square & {}
+	.button--round & {
+		border-radius: 200px;
+	}
+
+}
