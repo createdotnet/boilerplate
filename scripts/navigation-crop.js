@@ -1,51 +1,66 @@
 
 // Site menu cleanup
 function hide_site_menu_overflow() {
-
-	var
-	// Width of site menu navigation item
-	$structureItemMenu = $('.site-navigation__item--menu'),
-	// Available site menu width
-	siteMenuAvailableWidth = $structureItemMenu.outerWidth() - 1,
-	// Site menu element
-	$headerSiteMenu = $('.menu--site.menu--depth-0'),
-	// Site menu width
-	siteMenuCurrentWidth = $headerSiteMenu.outerWidth() - 1,
-	// Site menu item element
-	$headerSiteMenuItem = $('.menu--site.menu--depth-0 > .menu__item'),
-	// Site menu threshold width
-	splitRowsThreshold = 360,
-	// Scope
-	menuItemWidth = 0;
-
-	// Reset the menu classes
-	$headerSiteMenuItem.removeClass('visuallyhidden');
-	$headerSiteMenu.removeClass('js-menu--loaded');
-
-	// Major breakpoint conditions
-	if ( get_breakpoint_triggers() == 'major') {
-		$headerSiteMenuItem.each(function(){
-			if ( menuItemWidth + $(this).outerWidth(true) > siteMenuAvailableWidth) {
-				$(this).nextAll($headerSiteMenuItem).andSelf().addClass('visuallyhidden');
-				return;
-			}
-			else {
-				menuItemWidth = menuItemWidth + $(this).outerWidth(true);
-			}
-		});
-		if (siteMenuCurrentWidth > splitRowsThreshold) {
-			$headerSiteMenu.addClass('js-menu--split-column');
-		}
-		else {
-			$headerSiteMenu.removeClass('js-menu--split-column');
-		}
-		// Add a loaded class
-		$headerSiteMenu.addClass('js-menu--loaded');
-	}
+	//
+	// var menu = {};
+	//
+	// // Site menu element
+	// menu.container = document.querySelector('.menu--site.menu--depth-0');
+	// // Site menu item element
+	// menu.item = document.querySelectorAll('.menu--site.menu--depth-0 > .menu__item');
+	//
+	// // Reset the menu classes before we get thier width
+	// for (var i = 0; i < menu.item.length; i++) {
+	// 	console.log(menu.item[i].classList);
+	// 	menu.item[i].classList.remove('visuallyhidden');
+	// 	console.log("after" + menu.item[i].classList);
+	// }
+	// menu.container.classList.remove('js-menu--loaded');
+	//
+	//
+	// // Available site menu width
+	// menu.containerWidth = menu.container.getBoundingClientRect().width;
+	//
+	// // to increment in the loop
+	// menu.itemsWidth = 0;
+	//
+	// console.log(menu);
+	//
+	// // Major breakpoint conditions
+	// if ( get_breakpoint_triggers() == 'major') {
+	//
+	// 	// Loop throught the menu items widths, adding them up untill they hit the menu.AvailableWidth
+	// 	for (var i = 0; i < menu.item.length; i++) {
+	// 		var _this = menu.item[i];
+	//
+	// 		console.log(menu.itemsWidth + _this.outerWidth + 1);
+	//
+	// 		// If adding this menu item takes us over the limit
+	// 		if ( (menu.itemsWidth + _this.getBoundingClientRect().width + 16) > menu.containerWidth) {
+	// 			// hide this item
+	// 			_this.classList.add('visuallyhidden');
+	// 			// ...and all next items
+	// 			for (var j = i; j < menu.item.length; j++) {
+	// 				menu.item[j].classList.add('visuallyhidden');
+	// 			}
+	// 			break;
+	// 		}
+	// 		else {
+	// 			menu.itemsWidth = menu.itemsWidth + _this.getBoundingClientRect().width;
+	// 		}
+	//
+	// 	}
+	//
+	// 	// Add a loaded class
+	// 	menu.container.classList.add('js-menu--loaded');
+	// }
 }
 
+document.querySelector('.menu--site.menu--depth-0').classList.add('js-menu--loaded');
+
 // On page ready
-$(document).ready(function() {
+// $(document).ready(function() {
+$(window).load(function() {
 
 	// Site menu cleanup
 	hide_site_menu_overflow();

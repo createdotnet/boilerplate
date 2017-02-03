@@ -4,7 +4,9 @@
 // See boilerplate/styles/toolkit/_navigation-breakpoint-trigger.scss
 
 function get_breakpoint_triggers() {
+
 	var breakpointTriggerElement = document.querySelector('#js-navigation-breakpoint-trigger');
 	breakpointTriggerHeader = window.getComputedStyle(breakpointTriggerElement, ':before' ).getPropertyValue('content').replace(/\"/g, '');
+
 	return breakpointTriggerHeader;
 }
