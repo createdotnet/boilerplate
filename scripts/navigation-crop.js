@@ -23,7 +23,7 @@ function hide_site_menu_overflow() {
 
 	// Reset the menu classes before we get thier position again
 	for (var i = 0; i < menu.item.length; i++) {
-		menu.item[i].style.display = 'inline-block';
+		menu.item[i].classList.remove('menu__item--hidden')
 	}
 	menu.moreMenuList.innerHTML = "";
 	menu.container.classList.remove('js-menu--loaded');
@@ -35,7 +35,7 @@ function hide_site_menu_overflow() {
 	// to increment in the loop
 	menu.itemsWidth = 0;
 
-	console.log(menu);
+	// console.log(menu);
 
 	// Major breakpoint conditions
 	if ( get_breakpoint_triggers() == 'major') {
@@ -58,7 +58,7 @@ function hide_site_menu_overflow() {
 					menu.moreMenuList.appendChild(menu.item[j].cloneNode(true));
 
 					// hide this item
-					menu.item[j].style.display = "none";
+					menu.item[j].classList.add('menu__item--hidden');
 
 				}
 
