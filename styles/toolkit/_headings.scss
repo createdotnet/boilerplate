@@ -5,6 +5,17 @@
 // Creates a typographic scale for headings using a choice of typographic scales, taken from http://type-scale.com/
 // The $heading--[size] vars are Sass maps set in boilerplate/variables.scss and can be redefined to make a templates options bigger, smaller, more varied etc
 
+// reset browser styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+}
+
+
 .heading {
 	margin-top: 0;
 	margin-bottom: .5em;
