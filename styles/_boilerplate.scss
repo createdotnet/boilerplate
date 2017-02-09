@@ -41,7 +41,7 @@
 @import "component/blog";
 
 // Pagebuilder Styles
-@import "../pattern-source/app/meta/variables/_variables-live-pages"; // TODO: this wont work outside the Create office!
+@import "../../pattern-source/app/meta/variables/_variables-live-pages"; // TODO: this wont work outside the Create office!
 @import "component/pagebuilder/container";
 @import "component/pagebuilder/container--full-width";
 @import "component/pagebuilder/content-block";
