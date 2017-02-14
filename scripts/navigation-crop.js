@@ -29,11 +29,7 @@ function hide_site_menu_overflow() {
 	menu.container.classList.remove('js-menu--loaded');
 
 
-	// Available site menu width
-	menu.containerWidth = menu.container.getBoundingClientRect().width;
-
-	// to increment in the loop
-	menu.itemsWidth = 0;
+	console.log(menu);
 
 	// console.log(menu);
 
@@ -43,14 +39,15 @@ function hide_site_menu_overflow() {
 		// add space for the 'more' item, see the CSS
 		document.body.classList.add('menu-is-cropped');
 
-		// Loop throught the menu items widths, adding them up untill they hit the menu.AvailableWidth
+		// Loop throught the menu items widths, finding the first one that wraps on to a new line
 		for (var i = 0; i < menu.item.length; i++) {
 			var _this = menu.item[i];
 
-			// If adding this menu item takes us over the limit
-			if ( _this.getBoundingClientRect().top != menu.topPosition) {
-				// show the 'more' menu
-				menu.moreMenuToggle.style.display = "block";
+			// rounding the number for IE and Edge
+			var thisPosition = Math.round( _this.getBoundingClientRect().top);
+
+			// If adding this menu item takes us on to the next line
+			if ( thisPosition != menu.topPosition) {
 
 				// copy and hide the overflowing items
 				for (var j = i; j < menu.item.length; j++) {
@@ -65,9 +62,6 @@ function hide_site_menu_overflow() {
 				menu.cropped = true;
 
 				break;
-			}
-			else {
-				menu.itemsWidth = menu.itemsWidth + _this.getBoundingClientRect().width;
 			}
 
 		}
