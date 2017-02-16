@@ -20,7 +20,8 @@
 .content-block--heading,
 .content-block--text,
 .content-block--image_text .media__copy,
-.content-block--form {
+.content-block--form,
+.content-block--quote {
 
 	line-height: $template-option-line-height;
 }
@@ -223,6 +224,35 @@
 	}
 }
 
+
+/*
+// Type: Quote
+*/
+
+.content-block--quote {
+
+	// Reset
+	blockquote {
+		margin: 0;
+	}
+
+	blockquote p {
+		// Curly quotes
+		quotes: "\201C" "\201D" "\2018" "\2019";
+		&:before {
+			content: open-quote;
+		}
+		&:after {
+			content: close-quote;
+		}
+	}
+	cite {
+		display: block;
+		text-align: right;
+		font-weight: bold;
+	}
+
+}
 
 
 /*
