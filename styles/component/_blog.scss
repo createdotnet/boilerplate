@@ -1,6 +1,9 @@
 
 // Blog styles / resets
 
+//
+// Blog Archive / side col
+
 .blog-archive,
 .blog-archive ul {
 	@include reset-list();
@@ -17,4 +20,31 @@
 .blog-archive-month--collapsed .blog-archive-post-root,
 .blog-archive-year--collapsed .blog-archive-month-root {
 	display: none;
+}
+
+
+
+//
+// Blog Summary Page
+ol.blog-summary {
+	@include reset-list();
+}
+.blog-summary__url {
+	text-decoration: none;
+}
+.blog-summary__title {
+	margin-bottom: 0;
+	text-decoration: underline;
+}
+.blog-summary__item {
+	margin-bottom: 2em;
+}
+
+
+// Previously inline styles, see blog.html and blog_category.html
+.blog-summary__item,
+.blog-heading,
+.blog-summary,
+.blog-heading--complementary {
+	border-color: colour(menubg);
 }

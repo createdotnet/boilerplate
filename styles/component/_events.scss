@@ -1,0 +1,23 @@
+
+// Events Pages
+
+.events {
+	
+	ul.block-list {
+		@include reset-list();
+	}
+}
+
+
+// Previously inline styles, see events_main.inc.php
+.event__summary-root__heading {
+	color: colour(menutxt);
+	background-color: colour(menubg);
+}
+.event__summary-child__item {
+	border-color: colour(menubg);
+}
+.events--none {
+	font-size: .9em;
+	font-weight: bold;
+}

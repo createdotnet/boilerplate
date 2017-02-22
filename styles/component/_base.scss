@@ -12,3 +12,10 @@ body {
 a {
 	color: colour(link_text);
 }
+
+
+p {
+	// We only apply margins to the bottom of elements, it makes a consitent vertical rhythm easier to achieve.
+	// Override browser defaults
+	margin-top: 0;
+}

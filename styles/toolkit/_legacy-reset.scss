@@ -6,5 +6,5 @@
 
 // Ensure that page shop titles get the templates font size, or the font size from the scale selected in the design studio.
 .pageShopTitle {
-	font-size: inherit; // overides a font-size 16px set in shop-category.min.css
+	font-size: inherit !important; // overides a font-size 16px set in shop-category.min.css
 }

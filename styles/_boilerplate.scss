@@ -40,7 +40,12 @@
 @import "component/list-csv";
 @import "component/icon-fonts";
 @import "component/form";
+
+//
+// Page Types
+
 @import "component/blog";
+@import "component/events";
 
 // Pagebuilder Styles
 @import "../../pattern-source/app/meta/variables/_variables-live-pages"; // TODO: this wont work outside the Create office!
