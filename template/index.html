@@ -1,5 +1,7 @@
 <!--WDK:header:start-->
-<!--WDK:version:1.3-->
+<!--WDK:comment: 165 […] -->
+<!--WDK:version:1.5-->
+<!--WDK:comment: TODO enable this to be added via css or other a manifest file include -->
 <!--WDK:templateoptions:maxwidth:1200px-->
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -19,6 +21,7 @@
 
 		<style>
 			<!--WDK:base:css:fonts-->
+			/* A comment to stop the syntax highlighting from breaking */
 			/* Add the template background options */
 			html { <!--WDK:templateoption:templatebg--> }
 		</style>
@@ -34,7 +37,9 @@
 	</head>
 
 	<!--WDK:comment: Side column classes on the body to position the site complementary columns -->
-	<body class="<!--WDK:base:helperClasses--> template-rwd">
+	<body class="<!--WDK:base:helperClasses--> template-rwd template-structure-165">
+
+		<a href="#site-content" class="skip-link">Skip to Main Content:</a>
 
 		<!--WDK:comment: Wrapper for the entire site & ID for back-to-top link -->
 		<div id="site-top" class="structure">
@@ -47,10 +52,6 @@
 
 						<!-- Logo -->
 						<li class="site-navigation__item site-navigation__item--logo" itemscope itemtype="http://schema.org/Organization">
-
-							<!--WDK:if:pageIsHome-->
-							<h1 class="reset-heading">
-							<!--WDK:endif-->
 
 							<a class="logo<!--WDK:if:header--> logo--image<!--WDK:if:header3--> logo--image-3<!--WDK:elseif:header4--> logo--image-4<!--WDK:endif--><!--WDK:else--> logo--text<!--WDK:endif-->" href="/" itemprop="url">
 
@@ -66,10 +67,6 @@
 								<!--WDK:endif-->
 
 							</a>
-
-							<!--WDK:if:pageIsHome-->
-							</h1>
-							<!--WDK:endif-->
 
 						</li>
 
@@ -113,6 +110,7 @@
 							<ul class="reset-list menu menu--shop">
 
 								<!-- Login -->
+								<!--WDK:comment: Currently the enable/show/hide logic is a bit complicated in the app - make sure this is the best way to do this -->
 								<!--WDK:if:plugin:useraccount:property:shoploginlink-->
 								<li id="site-account" class="menu__item menu--shop__account">
 
@@ -206,85 +204,55 @@
 
 						</li>
 					</ul>
-
-					<noscript class="accesibility-skip">
-						<span class="accesibility-skip__label">Skip to:</span>
-						<ul class="accesibility-skip__links reset-list list list--csv">
-							<li>
-								<a class="list--csv__text" href="#site-menu">menu</a>
-							</li>
-							<!--WDK:if:plugin:useraccount:property:shoploginlink-->
-							<li>
-								<a class="list--csv__text" href="#site-account">account</a>
-							</li>
-							<!--WDK:endif-->
-							<!--WDK:if:plugin:shop:property:use_basket-->
-							<li>
-								<a class="list--csv__text" href="#site-basket">basket</a>
-							</li>
-							<!--WDK:endif-->
-							<!--WDK:if:hasShop-->
-							<li>
-								<a class="list--csv__text" href="#site-search">search</a>
-							</li>
-							<!--WDK:endif-->
-							<li>
-								<a class="list--csv__text" href="#site-content">main content</a>
-							</li>
-							<li>
-								<a class="list--csv__text" href="#site-footer">footer</a>
-							</li>
-						</ul>
-					</noscript>
-
 				</div>
 
 			</div>
 
 			<!--WDK:comment: Wrapper for the page & ID for back-to-top link -->
-			<div id="site-content" class="structure__item structure__item--page">
+			<main id="site-content" class="structure__item structure__item--page">
 
 				<div class="structure__item__utility clearfix">
 
 					<!--WDK:comment: Main content relevant to the site -->
 					<div role="main" class="site-main">
-
-						<!--WDK:comment: Surround the banner link in an H1 if on the homepage -->
-						<!--WDK:if:pageIsHome-->
-						<h2 class="site-main__page-title wdk_content-pagetitle heading heading--alpha font--heading"><span class="heading__utility"><!--WDK:display:pagetitle--></span></h2>
-						<!--WDK:else-->
 						<h1 class="site-main__page-title wdk_content-pagetitle heading heading--alpha font--heading"><span class="heading__utility"><!--WDK:display:pagetitle--></span></h1>
-						<!--WDK:endif-->
 						<!--WDK:header:end-->
+
+						<!--WDK:comment: Page Content goes here -->
+
 						<!--WDK:footer:start-->
 					</div>
 					<!--WDK:comment: Primary complementary content relevant to the site -->
 					<!--WDK:column:start:right-->
 					<!--WDK:column:width:none-->
 					<aside role="complementary" id="wdk_sidecolumn-containerright" class="site-complementary site-complementary--primary">
-						<!--WDK:column:item:start-->
-						<div class="dyos_sideColumnItem">
-							<h2 class="dyos_sideColumnTitle complementary-block__header heading heading--delta font--heading"><span class="heading__utility"><!--WDK:column:item:title--></span></h2>
-							<span class="dyos_sideColumnContent"><!--WDK:column:item:content--></span>
+						<div class="site-complementary__utility">
+							<!--WDK:column:item:start-->
+							<div class="dyos_sideColumnItem">
+								<h2 class="dyos_sideColumnTitle complementary-block__header heading heading--delta font--heading"><span class="heading__utility"><!--WDK:column:item:title--></span></h2>
+								<span class="dyos_sideColumnContent"><!--WDK:column:item:content--></span>
+							</div>
+							<!--WDK:column:item:end-->
 						</div>
-						<!--WDK:column:item:end-->
 					</aside>
 					<!--WDK:column:end:right-->
 					<!--WDK:comment: Secondary complementary content relevant to the site -->
 					<!--WDK:column:start:left-->
 					<!--WDK:column:width:none-->
 					<aside role="complementary" id="wdk_sidecolumn-containerleft" class="site-complementary site-complementary--secondary">
-						<!--WDK:column:item:start-->
-						<div class="dyos_sideColumnItem">
-							<h2 class="dyos_sideColumnTitle complementary-block__header heading heading--delta font--heading"><span class="heading__utility"><!--WDK:column:item:title--></span></h2>
-							<span class="dyos_sideColumnContent"><!--WDK:column:item:content--></span>
+						<div class="site-complementary__utility">
+							<!--WDK:column:item:start-->
+							<div class="dyos_sideColumnItem">
+								<h2 class="dyos_sideColumnTitle complementary-block__header heading heading--delta font--heading"><span class="heading__utility"><!--WDK:column:item:title--></span></h2>
+								<span class="dyos_sideColumnContent"><!--WDK:column:item:content--></span>
+							</div>
+							<!--WDK:column:item:end-->
 						</div>
-						<!--WDK:column:item:end-->
 					</aside>
 					<!--WDK:column:end:left-->
 				</div>
 
-			</div>
+			</main>
 
 			<!--WDK:comment: Footer information relevant to the site -->
 			<div role="contentinfo" id="site-footer" class="structure__item structure__item--footer">
@@ -326,8 +294,7 @@
 							<ul class="list list--payment">
 								<!--WDK:plugin:paymentcards:start-->
 								<li>
-									<!-- TODO make these SVGs -->
-									<span class="image-icon"><img src="/shop/images/checkout/cards/<!--WDK:plugin:paymentcards:type-->.png" alt="<!--WDK:plugin:paymentcards:name-->"></span>
+									<span class="image-icon"><img src="<!--WDK:plugin:paymentcards:url-->" alt="<!--WDK:plugin:paymentcards:name-->"></span>
 									<span class="image-text"><!--WDK:plugin:paymentcards:name--></span>
 								</li>
 								<!--WDK:plugin:paymentcards:end-->
@@ -349,8 +316,8 @@
 									<span class="icon-text">Sign Up</span>
 								</button>
 								<!--WDK:comment: Form validation -->
-								<div class="form__feedback form__feedback--failed">Please enter a valid email address</div>
-								<div class="form__feedback form__feedback--success">Thanks, you are now subscribed to our mailing list</div>
+								<div class="form__feedback form__feedback--failed validation--negative">Please enter a valid email address</div>
+								<div class="form__feedback form__feedback--success validation--positive">Thanks, you are now subscribed to our mailing list</div>
 								<div class="form__feedback form__feedback--progress">Sending&hellip;</div>
 							</fieldset>
 							<!--WDK:plugin:newsletter:end-->

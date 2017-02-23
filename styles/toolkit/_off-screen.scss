@@ -1,12 +1,9 @@
-/* ========== //
-// OFF SCREEN //
-// ========== */
+//
+// OFF SCREEN
 
-
-/*
 // Behavior: Positions elements off-screen but still accessibly readable.
-// Dependencies: None
-*/
+// See http://webaim.org/techniques/css/invisiblecontent/
+
 
 // Mixin
 @mixin off-screen() {
@@ -14,6 +11,13 @@
 	position: absolute;
 	left: -9999px;
 }
+
+@mixin off-screen-reset() {
+
+	position: static;;
+	left: initial;
+}
+
 
 // Define the class
 // TODO should this be in a separate extend file for us?
