@@ -72,49 +72,32 @@
 
 
 
-	// JAVASCRIPT TOGGLES
-
-	.js-nav-main__item__toggle {
-
+	// Position dropdown icons
+	.menu__item__toggle {
 		// Context: Browser has JS
 		position: absolute;
-		top: 0;
-		right: 0;
-		display: table;
-		text-align: center;
-		text-decoration: none;
+		top: .5em;
+		right: 1em;
+		
+		font-size: 20px;
+	}
 
-		// E: drop down arrows
-		.i:before {
-
-			font-size: 16px;
-			display: table-cell;
-			vertical-align: middle;
-
+	// Rotate dropdown icon when toggled
+	.menu__item__toggle.dropdown-toggle--active {
+		.i {
+			transform: rotate(180deg);
+			display: block;
 		}
+	}
 
-		// Show and hide the up / down arrow icons when drop down is toggled / active
-		.i-up {
-			display: none;
-		}
-		&.js-nav-main__item__toggle--active {
-			.i-up {
-				display: table-cell;
-			}
-			.i-down {
-				display: none;
-			}
-		}
 
-		// Context: no javascript
-		// Full menu is shown so drop down toggles are not required
-		.no-js & {
+	// Context: no javascript
+	// Full menu is shown so drop down toggles are not required
+	.no-js & .menu__item__toggle {
 
-			display: none;
+		display: none;
 
-		}
-
-	} // end .js-nav-main__item__toggle
+	}
 
 
 } // end @mixin
