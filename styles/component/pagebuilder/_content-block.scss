@@ -21,7 +21,8 @@
 .content-block--text,
 .content-block--image_text .media__copy,
 .content-block--form,
-.content-block--quote {
+.content-block--quote,
+.content-block--htmlfragment {
 
 	line-height: $template-option-line-height;
 }
