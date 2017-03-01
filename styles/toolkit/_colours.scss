@@ -4,6 +4,8 @@
 // NOTE: Color names should be seperated by underscores
 
 @function colour($colour, $opacity: 1) {
-
-    @return #{'<!--WDK:display:color:#{$colour}-->'};
+	@if($opacity == 1){
+		@return #{'<!--WDK:display:color:#{$colour}-->'};
+	}
+	@return #{'<!--WDK:display:color:#{$colour}:#{$opacity}-->'};
 }

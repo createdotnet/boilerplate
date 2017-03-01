@@ -18,14 +18,18 @@ body {
 
 	.page-type-pagebuilder {
 
-		// remove any constraints
-		.structure__item--page,
 		.structure__item--page .structure__item__utility {
-			width: 100%;
 			max-width: none;
 		}
 
+		.site-main__page-title,
+		.container {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
 		// Apply contsraint to page builder content
+		.site-main__page-title,
 		.container__content {
 			max-width: $template-option-max-width;
 			margin-left: auto;
