@@ -1,8 +1,21 @@
 
 // Form Base Styles
 
+.form {
+	max-width: 750px;
+    margin-bottom: 2em;
+}
+
 .form-fields {
 	@include reset-list();
+
+	> li {
+		margin-bottom: 1em;
+	}
+
+	.text-input {
+		width: 100%;
+	}
 
 	label {
 		display: block;
@@ -12,4 +25,52 @@
 .text-input {
 	font-size: 1em;
     padding: 0.4em;
+}
+
+ .fieldset {
+	 border: none;
+	 padding: 0;
+	 margin: 0;
+ }
+ .legend {
+	 max-width: 200px;
+
+	 display: block;
+	 font-size: 1.3em;
+	 margin-bottom: .7em;
+ }
+
+
+
+// M: the 'contact us' form, default page for new users
+.form--contact {
+
+	.form-fields {
+		display: flex;
+		flex-wrap: wrap;
+
+		// grid
+		margin-left: -2em;
+
+		li {
+			flex: 0;
+			flex-basis: 100%;
+			padding-left: 2em;
+		}
+	}
+	li:first-child,
+	li:nth-child(2) {
+		flex: 1;
+		flex-basis: 50%;
+	}
+
+	.wdk_contactus-textarea {
+		min-height: 100px;
+	}
+}
+
+
+.form--search {
+
+    @include inline-button-text-input(90px);
 }

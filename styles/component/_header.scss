@@ -15,7 +15,19 @@
 		// Hide the text labels
 		display: none;
 	}
+
+	.dropdown-toggle__icon {
+		font-size: 1.8em;
+	}
+
+	.dropdown-item {
+		position: absolute;
+		right: 0;
+		z-index: index($z-index-list, nav-shop);
+	}
+
 }
+
 
 
 // Site logo / name
@@ -23,5 +35,66 @@
 	a {
 		color: colour(logo_text);
 		text-decoration: none;
+	}
+}
+
+
+
+
+// Menu Styles
+.site-navigation__item--menu {
+
+	color: colour(header_link_text);
+
+	.menu__link {
+		color: inherit;
+	}
+
+	.menu--depth-0 .dropdown-item {
+		white-space: nowrap;
+		width: auto;
+	}
+
+}
+
+
+//
+// For the menu cropper to work
+
+.menu__item.menu__item--hidden {
+	display: none;
+}
+.site-navigation__more-menu-dropdown {
+	display: inline-block;
+}
+
+// hide unless the menu is cropped
+.site-navigation__more-menu-dropdown {
+	display: none;
+	.menu-is-cropped & {
+		display: block;
+	}
+}
+
+// positioning the 'more' menu
+.menu-is-cropped {
+
+	.site-navigation__item--menu {
+		position: relative;
+	}
+	.menu.menu--site {
+		padding-right: 5em;
+	}
+	// position the 'more' link up in the space made above
+	.site-navigation__more-menu-dropdown {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	// the dropdown
+	.menu--more {
+		position: absolute;
+		white-space: nowrap;
+		z-index: index($z-index-list, nav-drop-down);
 	}
 }

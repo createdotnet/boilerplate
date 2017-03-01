@@ -1,0 +1,21 @@
+
+// Shop Category
+// List of sub categories in a category
+
+.sub-category {
+
+	// equal height children
+	display: flex;
+	flex-wrap: wrap;
+
+
+	// Extra specificity to overide csswizardry-grids.css
+	&,
+	&.grid {
+		margin-bottom: 2em;
+	}
+
+	> li {
+		margin-bottom: 1em;
+	}
+}

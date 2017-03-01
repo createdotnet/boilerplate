@@ -1,7 +1,26 @@
 
 // Footer Base Styles
+.structure__item--footer {
+
+	color: colour(footer_text);
+	background-color: colour(footer_background);
+
+
+	// Stop the bloomin clearfix elements from doing anything
+	br[style="clear:both;"] {
+		display: none;
+	}
+
+}
+
+.structure__item--footer a:not(.wdk_live-button) {
+	// ensure links can be seen on the footer background colour
+	color: inherit;
+}
 
 .footer--site__item {
+
+	margin-bottom: 1em;
 
 	// Hide icon descriptions
 	.image-text,
@@ -17,6 +36,26 @@
 	}
 }
 
+
+
+
+//
+// Base Layout
+//
+
+.footer--site {
+	display: flex;
+	flex-wrap: wrap;
+}
+// dont flex these
+.footer--site__item--tinymce,
+.footer--site__item--copyright {
+	flex-basis: 100%;
+}
+
+.footer--site__item--social {}
+
+
 .footer--site__item--payment {
 
 	// Scale the card logo SVG's down to a resonasble size
@@ -27,6 +66,14 @@
 }
 
 .footer--site__item--newsletter {
+
+	flex-grow: 1;
+
+	@include inline-button-text-input();
+
+	.label {
+		display: none;
+	}
 
 	.form__feedback {
 		display: none;
@@ -41,4 +88,23 @@
 	.form--progress .form__feedback--progress {
 		display: block;
 	}
+}
+
+
+// Make a grid
+.footer--site {
+	margin-left: -3em;
+}
+.footer--site__item {
+	padding-left: 3em;
+}
+
+// Style "powered by Create" and site copyright
+.footer--site__item--copyright,
+.footer--site > p {
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
 }

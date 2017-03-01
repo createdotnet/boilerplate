@@ -7,6 +7,15 @@
 	margin-bottom: 1em;
 }
 
+.product-summary__body {
+	color: inherit;
+	text-decoration: none;
+	display: block;
+	padding: 1em;
+	padding-bottom: 0;
+}
+
+
 .product-summary__sale-banner {
 	position: absolute;
 	z-index: index($z-index-list, sale-banner);
@@ -15,3 +24,17 @@
 .product-summary__details {
 	@include reset-list();
 }
+
+
+
+.product-summary-list {}
+
+.product-summary-list--tile {
+	// Equal height grid items / products
+	display: flex;
+    flex-wrap: wrap;
+	.product-summary__body {
+		height: 100%;
+	}
+}
+.product-summary-list--row {}
