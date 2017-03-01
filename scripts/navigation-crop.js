@@ -1,3 +1,28 @@
+//
+// $(document).ready(function() {
+//
+// 	var elemWidth,
+// 		fitCount,
+// 		fixedWidth = 120,
+// 	    $menu = $("ul.menu--site"),
+// 		$collectedSet;
+//
+// 	collect();
+// 	$(window).resize(collect);
+//
+// 	function collect() {
+// 	    elemWidth = $menu.width();
+// 	    fitCount = Math.floor(elemWidth / fixedWidth) - 1;
+//
+// 		console.log(elemWidth);
+// 		console.log(fitCount);
+//
+// 	    $collectedSet = $menu.children(":gt(" + fitCount + ")");
+// 	    $("ul.menu--more").empty().append($collectedSet.clone());
+// 	}
+// });
+
+
 
 // Site menu cleanup
 function hide_site_menu_overflow() {
@@ -5,91 +30,91 @@ function hide_site_menu_overflow() {
 	var menu = {};
 
 	// Site menu element
-	menu.container = document.querySelector('.menu--site.menu--depth-0');
+	menu.container = $('.menu--site.menu--depth-0');
 	// Site menu item element
-	menu.item = document.querySelectorAll('.menu--site.menu--depth-0 > .menu__item');
+	menu.item = $('.menu--site.menu--depth-0 > .menu__item');
 
-	menu.topPosition = menu.container.getBoundingClientRect().top;
+	// get menu top position
+	// rounding the number for IE and Edge
+	menu.topPosition = menu.container.offset().top;
 
 	// more menu container
-	menu.moreMenu = document.getElementById('js-site-menu-more');
+	menu.moreMenu = $('#js-site-menu-more');
 	// more menu list <ul>
-	menu.moreMenuList = document.querySelector('#js-site-menu-more > ul');
+	menu.moreMenuList = $('#js-site-menu-more ul.menu--depth-1');
 	// more menu toggle
-	menu.moreMenuToggle = document.querySelector('#js-site-menu-more > .dropdown-toggle');
+	menu.moreMenuToggle = $('#js-site-menu-more > .dropdown-toggle');
 
 	menu.cropped = false;
 
 
 	// Reset the menu classes before we get thier position again
-	for (var i = 0; i < menu.item.length; i++) {
-		menu.item[i].classList.remove('menu__item--hidden')
-	}
-	menu.moreMenuList.innerHTML = "";
-	menu.container.classList.remove('js-menu--loaded');
+	menu.item.removeClass('menu__item--hidden');
+	menu.moreMenuList.empty();
+	menu.container.removeClass('js-menu--loaded');
+	$('body').removeClass('menu-is-cropped');
 
-
-	console.log(menu);
 
 	// console.log(menu);
+
+	// Function to hide a set of menu items and replicated them in the 'more menu'
+	function moveItems(items){
+
+		// Put them in the 'more menu'
+		menu.moreMenuList.empty().append(items.clone());
+
+		// Hide the original
+		items.addClass('menu__item--hidden');
+	}
+
+	function checkPositions(items){
+		var $itemsThatDontFit;
+		var menuNeedsCropping;
+
+		items.each(function(){
+			var $thisPosition = $( this ).offset().top;
+			if ( $thisPosition != menu.topPosition) {
+				menuNeedsCropping = true;
+			}
+		});
+
+		// If something needed cropping, make the 'more' menu item visible and calculate widths again
+		if (menuNeedsCropping) {
+
+			$('body').addClass('menu-is-cropped');
+
+			items.each(function(){
+				var $thisPosition = $( this ).offset().top;
+				if ( $thisPosition != menu.topPosition) {
+					$itemsThatDontFit = $( this ).nextAll().andSelf();
+					moveItems($itemsThatDontFit);
+					return false;
+				}
+			});
+
+		}
+
+		return $itemsThatDontFit;
+	}
 
 	// Major breakpoint conditions
 	if ( get_breakpoint_triggers() == 'major') {
 
-		// add space for the 'more' item, see the CSS
-		document.body.classList.add('menu-is-cropped');
+		checkPositions(menu.item);
 
-		// Loop throught the menu items widths, finding the first one that wraps on to a new line
-		for (var i = 0; i < menu.item.length; i++) {
-			var _this = menu.item[i];
-
-			// rounding the number for IE and Edge
-			var thisPosition = Math.round( _this.getBoundingClientRect().top);
-
-			// If adding this menu item takes us on to the next line
-			if ( thisPosition != menu.topPosition) {
-
-				// copy and hide the overflowing items
-				for (var j = i; j < menu.item.length; j++) {
-					// add to the 'more' dropdown-toggle
-					menu.moreMenuList.appendChild(menu.item[j].cloneNode(true));
-
-					// hide this item
-					menu.item[j].classList.add('menu__item--hidden');
-
-				}
-
-				menu.cropped = true;
-
-				break;
-			}
-
-		}
-
-		if (!menu.cropped) {
-			// remove the helper class on the body to remove the space created for the 'more' item to sit in
-			document.body.classList.remove('menu-is-cropped');
-		}
 		// Add a loaded class
-		menu.container.classList.add('js-menu--loaded');
+		menu.container.addClass('js-menu--loaded');
 	}
 
 }
 
 
 // On page ready
-// $(document).ready(function() {
-$(window).load(function() {
+$(document).ready(function() {
+// $(window).load(function() {
 
 	// Site menu cleanup
 	hide_site_menu_overflow();
+	$(window).resize(hide_site_menu_overflow);
 
-	// De-bounce on resize
-	// url: http://stackoverflow.com/questions/1500312/dom-onresize-event
-	var timeOut = null;
-	window.onresize = function(){
-
-		if(timeOut != null) clearTimeout(timeOut);
-		timeOut = setTimeout(hide_site_menu_overflow, 400);
-	};
 });
