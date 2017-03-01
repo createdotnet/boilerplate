@@ -54,3 +54,33 @@
 .photo--lightbox {
 	 cursor: zoom-in;
 }
+
+
+.product-item__details {
+
+	.name {
+		margin-bottom: 0;
+	}
+
+	> li {
+		margin-bottom: 1em;
+	}
+
+	.price {
+		font-size: 1.3em;
+	    text-align: right;
+	    display: block;
+	}
+}
+
+.stock_quantity_box {
+
+	margin-bottom: 2em;
+	display: block;
+
+	input[type="text"] {
+		@extend .text-input;
+		// but a little bit smaller
+		padding: 0.3em;
+	}
+}

@@ -11,9 +11,13 @@
 // Feel free to overide this list in your theme. Existing items may need to be duplicated as items cannot be added to the default list.
 
 $z-index-list:
+	pagebuilder-container-theme,
+	pagebuilder-container-content,
+	sale-banner,
 	sold-out-banner,
 	nav-main,
 	nav-drop-down,
 	nav-shop,
 	modal,
+	mobile-menu,
 !default;

@@ -8,13 +8,16 @@
 	font-size: 1em;
 	padding: .4em .7em;
 	text-decoration: none;
+	font-family: inherit;
 
 	// Style
 	background-color: colour(buttonbg);
 	color: colour(buttontxt);
 
 	// Design Studio 'Button Style' option
-	.button--square & {}
+	.button--square & {
+
+	}
 	.button--round & {
 		border-radius: 200px;
 	}

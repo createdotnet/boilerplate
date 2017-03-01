@@ -44,7 +44,7 @@ $layout-is-set: false !default;
 		.structure__item--footer {
 			margin-left: 200px;
 		}
-		
+
 		.structure__item--footer {
 			// Because floats are odd, this stops the footer sitting underneath the left menu.
 			overflow: hidden;
@@ -68,7 +68,7 @@ $layout-is-set: false !default;
 
 		// Tell the template setup that the layout has been successfully set
 		$layout-is-set: true !global;
-		
+
 		.structure__item__utility {
 
 			max-width: $template-option-max-width;
@@ -141,7 +141,7 @@ $layout-is-set: false !default;
 
 	// Making sure the layout choice is valid
 	@if $layout-is-set != true {
-		
+
 		@warn "You haven't set a layout type or the layout type selected is not valid. Make sure to set the $layout variable in /template-setup.scss";
 	}
 
@@ -165,11 +165,11 @@ $layout-is-set: false !default;
 		// Apply contraint to page builder content
 		.container__content {
 			max-width: $template-option-max-width;
-			margin: auto;
+			margin-left: auto;
+			margin-right: auto;
 		}
-	} 
+	}
 	@else {
 		@warn "Warning: You've included the 'pagebuilder-full-bleed' mixin but your $layout type does not support this option.";
 	}
 } // end @mixin pagebuilder-full-bleed
-

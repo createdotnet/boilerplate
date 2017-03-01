@@ -9,6 +9,7 @@
 
 .product-summary__sale-banner {
 	position: absolute;
+	z-index: index($z-index-list, sale-banner);
 }
 
 .product-summary__details {

@@ -1,14 +1,27 @@
 
 // Base Document styles / resets
 
-body {
-	margin: 0;
-
+html {
+	// On html, not body because background images are applied to html. Odd
+	background-color: colour(page_background);
+	color: colour(content_text);
 	font-size: $template-option-font-size;
 	line-height: $template-option-line-height;
 }
 
 
+body {
+	margin: 0;
+}
+
+
 a {
 	color: colour(link_text);
+}
+
+
+p {
+	// We only apply margins to the bottom of elements, it makes a consitent vertical rhythm easier to achieve.
+	// Override browser defaults
+	margin-top: 0;
 }

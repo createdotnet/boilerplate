@@ -1,0 +1,10 @@
+
+// Legacy Reset
+// Resets and overrides for various legacy styles and features that are unfortuneatly easier to bodge a fix here than fix the actual problem right now.
+// Please excuse any horrible selectors and `!important`s
+
+
+// Ensure that page shop titles get the templates font size, or the font size from the scale selected in the design studio.
+.pageShopTitle {
+	font-size: inherit !important; // overides a font-size 16px set in shop-category.min.css
+}

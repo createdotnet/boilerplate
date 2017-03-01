@@ -1,0 +1,16 @@
+
+//
+// Skip Link
+
+// This link is at the top of the page and hidden by default,
+// if focused (with the tab key) or javascript is off/broken it provides a way to skip past the sites navigation
+// and straight to the pages content.
+
+.skip-link {
+	@include off-screen();
+}
+
+.no-js .skip-link,
+.skip-link:focus {
+	@include off-screen-reset();
+}

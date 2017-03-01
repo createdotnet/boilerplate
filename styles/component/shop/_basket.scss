@@ -1,0 +1,16 @@
+
+// The 'Basket | Checkout' Links that appear on product pages when an item is in the basket
+.nav.shop-basket {
+
+	@include reset-list();
+
+	margin-bottom: 2em;
+	text-align: center;
+
+	// Override shop-product.min.css styles
+	font-weight: normal;
+
+	> li {
+		display: inline-block;
+	}
+}

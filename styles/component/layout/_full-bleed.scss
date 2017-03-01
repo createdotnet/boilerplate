@@ -28,8 +28,9 @@ body {
 		// Apply contsraint to page builder content
 		.container__content {
 			max-width: $template-option-max-width;
-			margin: auto;
+			margin-left: auto;
+			margin-right: auto;
 		}
-		
+
 	}
 }

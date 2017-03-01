@@ -1,0 +1,25 @@
+/* ================ //
+// MIXIN: FONT SIZE //
+// ================ */
+
+// Position a button inline with the single text input that it submits. i.e. a search bar or newsletter sign up.
+
+@mixin inline-button-text-input($button-width: 110px){
+	.fieldset {
+		// space for the buttom to sit in
+		padding-right: $button-width;
+		position: relative;
+
+		.legend {
+			display: none;
+		}
+	}
+	.button,
+	.wdk_live-button {
+		// put the button along side the text input and make it the same height
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
+}
