@@ -1,12 +1,11 @@
 
 // Events Pages
 
-.events {
-	
-	ul.block-list {
-		@include reset-list();
-	}
+// NOTE: this class is also in use in the guestbook, possibly elsewhere too
+.block-list {
+	@include reset-list();
 }
+
 
 
 // Previously inline styles, see events_main.inc.php
