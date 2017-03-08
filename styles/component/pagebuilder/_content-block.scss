@@ -258,6 +258,36 @@
 .content-block--image--portrait1x3 { padding-bottom: 300%; }
 
 
+// Image scale
+
+.content-block--image--scale-10 {
+	transform: scale(0.1);
+}
+.content-block--image--scale-20 {
+	transform: scale(0.2);
+}
+.content-block--image--scale-30 {
+	transform: scale(0.3);
+}
+.content-block--image--scale-40 {
+	transform: scale(0.4);
+}
+.content-block--image--scale-50 {
+	transform: scale(0.5);
+}
+.content-block--image--scale-60 {
+	transform: scale(0.6);
+}
+.content-block--image--scale-70 {
+	transform: scale(0.7);
+}
+.content-block--image--scale-80 {
+	transform: scale(0.8);
+}
+.content-block--image--scale-90 {
+	transform: scale(0.9);
+}
+
 
 /*
 // Type: Text
