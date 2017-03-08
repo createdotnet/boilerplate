@@ -93,3 +93,29 @@
 
 	opacity: 0.25;
 }
+
+.container--height-100,
+.container--height-75,
+.container--height-50,
+.container--height-25 {
+
+	.grid__item {
+		align-items: center;
+	    display: flex;
+	}
+	.content-block {
+		width: 100%;
+	}
+}
+.container--height-100 .content-blocks{
+	min-height: 100vh;
+}
+.container--height-75 .content-blocks{
+	min-height: 75vh;
+}
+.container--height-50 .content-blocks{
+	min-height: 50vh;
+}
+.container--height-25 .content-blocks{
+	min-height: 25vh;
+}
