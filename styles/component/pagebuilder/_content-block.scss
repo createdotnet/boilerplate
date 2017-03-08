@@ -147,6 +147,7 @@
 
 .content-block--image--square,
 .content-block--image--circle,
+.content-block--image--fill,
 .content-block--image--landscape3x2,
 .content-block--image--landscape16x9,
 .content-block--image--landscape3x1,
@@ -186,6 +187,25 @@
 .content-block--image--,
 .content-block--image--original {
 	height: auto;
+	img {
+		position: static;
+	}
+}
+
+.content-block--image--fill {
+	height: 100%;
+}
+
+// don't fill if theres only one
+[data-pb-items="1"] {
+	.content-block--image--fill {
+		height: auto;
+	}
+}
+
+// TODO: make this work.
+.im-the-first-of-many {
+	// stop it doing all that magic, original aspect ration
 	img {
 		position: static;
 	}
