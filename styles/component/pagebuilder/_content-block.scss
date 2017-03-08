@@ -79,6 +79,23 @@
 	}
 }
 
+// M: Vertical Align
+// .content-block.content-block--align-top,
+// .content-block.content-block--align-bottom,
+// .content-block.content-block--align-middle {
+// 	height: 100%;
+// 	display: flex;
+// }
+// .content-block--align-top {
+// 	align-items: flex-start;
+// }
+// .content-block--align-bottom {
+// 	align-items: flex-end;
+// }
+// .content-block--align-middle {
+// 	align-items: center;
+// }
+
 /*
 // Type: Heading
 */
@@ -198,21 +215,26 @@
 	height: 100%;
 }
 
-// don't fill if theres only one
-[data-pb-items="1"] {
-	.content-block--image--fill-container {
-		height: auto;
-	}
-}
+// If the container doesn't have a set height to fill images to, don't allow the first content block to 'fill' so that all others are set to it's height
+.container--height-0,
+.container:not([class^="container--height-"]) {
 
-// TODO: add this class to the markup.
-.content-blocks--all-img-fill-container {
-	> .grid__item:first-child {
+	// TODO: add this class to the markup.
+	.content-blocks--all-img-fill-container {
+		> .grid__item:first-child {
 
-		// stop it doing all that stretching magic, set to original aspect ratio
-		img {
-			position: static;
+			// stop it doing all that stretching magic, set to original aspect ratio
+			img {
+				position: static;
+			}
 		}
+	}
+
+}
+// don't fill if theres only one
+.container--height-0[data-pb-items="1"] {
+	.content-block--image--fill-container img {
+		position: static;
 	}
 }
 
