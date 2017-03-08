@@ -147,7 +147,7 @@
 
 .content-block--image--square,
 .content-block--image--circle,
-.content-block--image--fill,
+.content-block--image--fill-container,
 .content-block--image--landscape3x2,
 .content-block--image--landscape16x9,
 .content-block--image--landscape3x1,
@@ -192,22 +192,27 @@
 	}
 }
 
-.content-block--image--fill {
+
+// M: 'Filled' images. Make the image 100% of its parent, which is in turn 100% height of its pb container due to flex box
+.content-block.content-block--image--fill-container {
 	height: 100%;
 }
 
 // don't fill if theres only one
 [data-pb-items="1"] {
-	.content-block--image--fill {
+	.content-block--image--fill-container {
 		height: auto;
 	}
 }
 
-// TODO: make this work.
-.im-the-first-of-many {
-	// stop it doing all that magic, original aspect ration
-	img {
-		position: static;
+// TODO: add this class to the markup.
+.content-blocks--all-img-fill-container {
+	> .grid__item:first-child {
+
+		// stop it doing all that stretching magic, set to original aspect ratio
+		img {
+			position: static;
+		}
 	}
 }
 
