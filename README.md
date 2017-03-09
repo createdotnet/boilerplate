@@ -6,6 +6,8 @@ We’ve decided to open source the building blocks we use to create the CSS and 
 
 If you find a problem with the code or how it works please [raise issues](https://github.com/createdotnet/boilerplate/issues) against it.
 
+A full list of WDK tags for building your own markup and using colours can be found [here](http://developers.create.net/wdk/tags/).
+
 # NOTE: The below is a working draft.
 
 ## There are a few ways to use the boilerplate
