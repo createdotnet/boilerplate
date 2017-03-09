@@ -259,33 +259,45 @@
 
 
 // Image scale
-
-.content-block--image--scale-10 {
-	transform: scale(0.1);
+.content-block--scale-10,
+.content-block--scale-20,
+.content-block--scale-30,
+.content-block--scale-40,
+.content-block--scale-50,
+.content-block--scale-60,
+.content-block--scale-70,
+.content-block--scale-80,
+.content-block--scale-90 {
+	> div {
+		margin: 0 auto;
+	}
 }
-.content-block--image--scale-20 {
-	transform: scale(0.2);
+.content-block--scale-10 > div {
+	width: 10%;
 }
-.content-block--image--scale-30 {
-	transform: scale(0.3);
+.content-block--scale-20 > div {
+	width: 20%;
 }
-.content-block--image--scale-40 {
-	transform: scale(0.4);
+.content-block--scale-30 > div {
+	width: 30%;
 }
-.content-block--image--scale-50 {
-	transform: scale(0.5);
+.content-block--scale-40 > div {
+	width: 40%;
 }
-.content-block--image--scale-60 {
-	transform: scale(0.6);
+.content-block--scale-50 > div {
+	width: 50%;
 }
-.content-block--image--scale-70 {
-	transform: scale(0.7);
+.content-block--scale-60 > div {
+	width: 60%;
 }
-.content-block--image--scale-80 {
-	transform: scale(0.8);
+.content-block--scale-70 > div {
+	width: 70%;
 }
-.content-block--image--scale-90 {
-	transform: scale(0.9);
+.content-block--scale-80 > div {
+	width: 80%;
+}
+.content-block--scale-90 > div {
+	width: 90%;
 }
 
 
