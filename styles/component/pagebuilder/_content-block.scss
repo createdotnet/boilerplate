@@ -54,6 +54,8 @@
 
 .content-block {
 
+	height: 100%;
+
 	> :last-child {
 
 		// Remove the vertical rhythm from last child elements in a container with vertical rhythm
@@ -78,23 +80,6 @@
 		height: auto;
 	}
 }
-
-// M: Vertical Align
-// .content-block.content-block--align-top,
-// .content-block.content-block--align-bottom,
-// .content-block.content-block--align-middle {
-// 	height: 100%;
-// 	display: flex;
-// }
-// .content-block--align-top {
-// 	align-items: flex-start;
-// }
-// .content-block--align-bottom {
-// 	align-items: flex-end;
-// }
-// .content-block--align-middle {
-// 	align-items: center;
-// }
 
 /*
 // Type: Heading
@@ -172,16 +157,19 @@
 .content-block--image--portrait9x16,
 .content-block--image--portrait1x3 {
 
-	position: relative;
-	height: 0;
+	.content-block--image__shape-utility {
 
-	img {
-		height: 100%;
-		width: 100%;
-		position: absolute;
-		left: 0;
+		position: relative;
+		height: 0;
+
+		img {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+		}
+
 	}
-
 	&:not(.content-block--image--fill) img {
 		object-fit: contain;
 		object-position: 50% 50%;
@@ -203,62 +191,42 @@
 
 .content-block--image--,
 .content-block--image--original {
-	height: auto;
-	img {
-		position: static;
-	}
-}
-
-
-// M: 'Filled' images. Make the image 100% of its parent, which is in turn 100% height of its pb container due to flex box
-.content-block.content-block--image--fill-container {
-	height: 100%;
-}
-
-// If the container doesn't have a set height to fill images to, don't allow the first content block to 'fill' so that all others are set to it's height
-.container--height-0,
-.container:not([class^="container--height-"]) {
-
-	// TODO: add this class to the markup.
-	.content-blocks--all-img-fill-container {
-		> .grid__item:first-child {
-
-			// stop it doing all that stretching magic, set to original aspect ratio
-			img {
-				position: static;
-			}
+	.content-block--image__shape-utility {
+		height: auto;
+		img {
+			position: static;
 		}
 	}
-
-}
-// don't fill if theres only one
-.container--height-0[data-pb-items="1"] {
-	.content-block--image--fill-container img {
-		position: static;
-	}
 }
 
-.content-block--image--square {
+.content-block--image--square .content-block--image__shape-utility {
 	padding-bottom: 100%;
 }
 
-.content-block--image--circle {
+.content-block--image--circle .content-block--image__shape-utility {
 	padding-bottom: 100%;
 	img {
 		border-radius: 100%;
 	}
 }
 
-.content-block--image--landscape3x2 { padding-bottom: 66.666%; }
-.content-block--image--landscape16x9 { padding-bottom: 56.25%; }
-.content-block--image--landscape3x1 { padding-bottom: 33.333%; }
+.content-block--image--fill-container .content-block--image__shape-utility {
+	height: 100%;
+}
 
-.content-block--image--portrait2x3 { padding-bottom: 150%; }
-.content-block--image--portrait9x16 { padding-bottom: 177.777%; }
-.content-block--image--portrait1x3 { padding-bottom: 300%; }
+.content-block--image--landscape3x2 .content-block--image__shape-utility { padding-bottom: 66.666%; }
+.content-block--image--landscape16x9 .content-block--image__shape-utility { padding-bottom: 56.25%; }
+.content-block--image--landscape3x1 .content-block--image__shape-utility { padding-bottom: 33.333%; }
+
+.content-block--image--portrait2x3 .content-block--image__shape-utility { padding-bottom: 150%; }
+.content-block--image--portrait9x16 .content-block--image__shape-utility { padding-bottom: 177.777%; }
+.content-block--image--portrait1x3 .content-block--image__shape-utility { padding-bottom: 300%; }
 
 
+
+//
 // Image scale
+
 .content-block--scale-10,
 .content-block--scale-20,
 .content-block--scale-30,
@@ -268,35 +236,35 @@
 .content-block--scale-70,
 .content-block--scale-80,
 .content-block--scale-90 {
-	> div {
+	.content-block--image__scale-utility {
 		margin: 0 auto;
 	}
 }
-.content-block--scale-10 > div {
+.content-block--scale-10 .content-block--image__scale-utility {
 	width: 10%;
 }
-.content-block--scale-20 > div {
+.content-block--scale-20 .content-block--image__scale-utility {
 	width: 20%;
 }
-.content-block--scale-30 > div {
+.content-block--scale-30 .content-block--image__scale-utility {
 	width: 30%;
 }
-.content-block--scale-40 > div {
+.content-block--scale-40 .content-block--image__scale-utility {
 	width: 40%;
 }
-.content-block--scale-50 > div {
+.content-block--scale-50 .content-block--image__scale-utility {
 	width: 50%;
 }
-.content-block--scale-60 > div {
+.content-block--scale-60 .content-block--image__scale-utility {
 	width: 60%;
 }
-.content-block--scale-70 > div {
+.content-block--scale-70 .content-block--image__scale-utility {
 	width: 70%;
 }
-.content-block--scale-80 > div {
+.content-block--scale-80 .content-block--image__scale-utility {
 	width: 80%;
 }
-.content-block--scale-90 > div {
+.content-block--scale-90 .content-block--image__scale-utility {
 	width: 90%;
 }
 

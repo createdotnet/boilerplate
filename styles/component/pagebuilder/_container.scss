@@ -105,6 +105,11 @@
 	}
 	.content-block {
 		width: 100%;
+		height: auto;
+	}
+
+	.content-block--image--fill-container {
+		height: 100%;
 	}
 }
 .container--height-100 .content-blocks{
