@@ -37,4 +37,11 @@ body {
 		}
 
 	}
+
+	body:not(.page-type-pagebuilder) {
+		.structure__item--page {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
 }

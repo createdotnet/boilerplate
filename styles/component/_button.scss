@@ -1,14 +1,23 @@
 
 // Base Button styles / resets
 
-.wdk_live-button {
+.reset-button {
+
 	// Reset
 	background-image: none;
 	border: none;
 	font-size: 1em;
 	padding: .4em .7em;
-	text-decoration: none;
 	font-family: inherit;
+}
+
+
+.wdk_live-button {
+
+	@extend .reset-button;
+
+	// incase it's an anchor
+	text-decoration: none;
 
 	// Style
 	background-color: colour(buttonbg);

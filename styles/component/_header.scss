@@ -100,5 +100,20 @@
 		position: absolute;
 		white-space: nowrap;
 		z-index: index($z-index-list, nav-drop-down);
+		text-align: right;
+
+		.dropdown-toggle{
+			cursor: pointer;
+		}
+
+		.dropdown-item {
+			transform: none;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			left: initial;
+			text-align: center;
+		}
+
 	}
 }
