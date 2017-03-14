@@ -211,6 +211,48 @@
 .content-block--image--portrait1x3 { padding-bottom: 300%; }
 
 
+// Image scale
+.content-block--scale-10,
+.content-block--scale-20,
+.content-block--scale-30,
+.content-block--scale-40,
+.content-block--scale-50,
+.content-block--scale-60,
+.content-block--scale-70,
+.content-block--scale-80,
+.content-block--scale-90 {
+	> div {
+		margin: 0 auto;
+	}
+}
+.content-block--scale-10 > div {
+	width: 10%;
+}
+.content-block--scale-20 > div {
+	width: 20%;
+}
+.content-block--scale-30 > div {
+	width: 30%;
+}
+.content-block--scale-40 > div {
+	width: 40%;
+}
+.content-block--scale-50 > div {
+	width: 50%;
+}
+.content-block--scale-60 > div {
+	width: 60%;
+}
+.content-block--scale-70 > div {
+	width: 70%;
+}
+.content-block--scale-80 > div {
+	width: 80%;
+}
+.content-block--scale-90 > div {
+	width: 90%;
+}
+
 
 /*
 // Type: Text
