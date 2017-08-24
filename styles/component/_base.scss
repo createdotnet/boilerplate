@@ -3,8 +3,8 @@
 
 html {
 	// On html, not body because background images are applied to html. Odd
-	
-	// NOTE Just testing to see if this screws up anything within 165 theme
+
+	// NOTE Tested and should be fine not having this for 165 theme
 	// background-color: colour(page_background);
 	// color: colour(content_text);
 	font-size: $template-option-font-size;
