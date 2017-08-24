@@ -1,6 +1,9 @@
+// Functions to output WDK colour tags within design studio
+// Useful docs: http://developers.create.net/wdk/tutorials/advanced-colour-functions.html
 
-// Function to output a WDK color tag
 
+// Simple WDK color tag with opacity
+// Example: .myclass {colour(body_text);}
 // NOTE: Color names should be seperated by underscores
 
 @function colour($colour, $opacity: 1) {
@@ -8,4 +11,17 @@
 		@return #{'<!--WDK:display:color:#{$colour}-->'};
 	}
 	@return #{'<!--WDK:display:color:#{$colour}:#{$opacity}-->'};
+}
+
+
+// Advanced WDK colour tag function with control over amount
+// Example: .myclass {advanced-colour(invert, body_text);}
+// Type variable accepts the followung: highlight, lowlight, invert, brighten, darken, bestvisible
+// NOTE: All functions NEED an amount set between 0-255 except invert and bestvisible which should be left as 'false'
+
+@function advanced-colour($type, $colour, $amount: false) {
+	@if($amount == false){
+		@return #{'<!--WDK:color:#{$type}:[#{$colour}]-->'};
+	}
+	@return #{'<!--WDK:color:#{$type}:[#{$colour}]:#{$amount}-->'};
 }
