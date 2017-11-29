@@ -12,15 +12,17 @@
 
 
 // B: Container wrapper
-.container {
+.page-type-pagebuilder {
+	// NOTE Added parent pagebuilder class to avoid messing with bootstraps container class within PBv2 pages
+	.container {
 
-	// width: 100%;
-	// NOTE Removed as this is messing with bootstraps container class within PBv2
-	position: relative;
+		width: 100%;
+		position: relative;
 
-	// Reset line-height
-	// NOTE set this where needed on content-block--[types]
-	line-height: 0;
+		// Reset line-height
+		// NOTE set this where needed on content-block--[types]
+		line-height: 0;
+	}
 }
 
 
