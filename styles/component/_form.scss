@@ -13,12 +13,25 @@
 		margin-bottom: 1em;
 	}
 
-	.text-input {
+	.text-input,
+	.select,
+	input[type=file] {
 		width: 100%;
+	}
+
+	.legend {
+		padding-bottom: 0;
 	}
 
 	label {
 		display: block;
+
+		.text-input,
+		.select,
+		input[type=file] {
+			width: auto;
+			margin-left: 4px;
+		}
 	}
 }
 
@@ -39,7 +52,14 @@
 	 margin-bottom: .7em;
  }
 
+.check-list {
+	@include reset-list();
 
+	input[type=checkbox],
+	input[type=radio] {
+    margin-right: 4px;
+	}
+}
 
 // M: the 'contact us' form, default page for new users
 .form--contact {
