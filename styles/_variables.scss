@@ -30,13 +30,13 @@ $template-option-truly-full: false !default;
 
 // Define heading scales that the deign studio heading size scales use to determin font sizes.
 // major-second
-$heading--small: ( alpha: 1.602, beta: 1.424, gamma: 1.266, delta: 1.125, epsilon: 1.063, zeta: 1) !default;
+$heading--small: ( jumbo: 2.706, hero: 2.082, alpha: 1.602, beta: 1.424, gamma: 1.266, delta: 1.125, epsilon: 1.063, zeta: 0.9) !default;
 // minor-third
-$heading--med: ( alpha: 2.074, beta: 1.728, gamma: 1.44, delta: 1.2, epsilon: 1.1, zeta: 1) !default;
+$heading--med: ( jumbo: 3.504, hero: 2.696, alpha: 2.074, beta: 1.728, gamma: 1.44, delta: 1.2, epsilon: 1.1, zeta: 0.9) !default;
 // perfect-fourth
-$heading--large: ( alpha: 3.157, beta: 2.369, gamma: 1.777, delta: 1.333, epsilon: 1.166, zeta: 1) !default;
+$heading--large: ( jumbo: 4.545, hero: 3.788, alpha: 3.157, beta: 2.369, gamma: 1.777, delta: 1.333, epsilon: 1.166, zeta: 0.9) !default;
 // augmented-fourth
-$heading--x-large: ( alpha: 3.998, beta: 2.827, gamma: 1.999, delta: 1.414, epsilon: 1.207, zeta: 1) !default;
+$heading--x-large: ( jumbo: 5.756, hero: 4.797, alpha: 3.998, beta: 2.827, gamma: 1.999, delta: 1.414, epsilon: 1.207, zeta: 0.9) !default;
 
 
 // Top or side navigation? See component/navigation/output.scss for what it does
