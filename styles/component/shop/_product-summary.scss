@@ -32,9 +32,7 @@
 .product-summary-list--tile {
 	// Equal height grid items / products
 	display: flex;
-    flex-wrap: wrap;
-	.product-summary__body {
-		height: 100%;
-	}
+  flex-wrap: wrap;
 }
+
 .product-summary-list--row {}
