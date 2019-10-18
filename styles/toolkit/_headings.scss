@@ -24,16 +24,15 @@ h6 {
 }
 
 // Mixin to convert heading scale variable to actual font sizes
-@mixin heading-size( $mixin-scale: $heading--small ){
-
+@mixin heading-size( $mixin-scale: $heading--small ) {
 	@each $mixin-heading, $mixin-size in $mixin-scale {
-
 		.heading--#{$mixin-heading} {
+			@include font-size(($template-option-font-size * $mixin-size) / 1.2, false);
 
-			@include font-size( $template-option-font-size * $mixin-size, false );
-
+      @media (min-width: $template-option-major-breakpoint) {
+        @include font-size($template-option-font-size * $mixin-size, false);
+      }
 		}
-
 	} // end @each
 } // end @mixin
 
