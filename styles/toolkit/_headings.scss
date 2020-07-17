@@ -27,7 +27,17 @@ h6 {
 @mixin heading-size( $mixin-scale: $heading--small ) {
 	@each $mixin-heading, $mixin-size in $mixin-scale {
 		.heading--#{$mixin-heading} {
-			@include font-size(($template-option-font-size * $mixin-size) / 1.2, false);
+			@if $mixin-heading == giant {
+				@include font-size(($template-option-font-size * $mixin-size) / 1.9, false);
+			} @else if $mixin-heading == huge {
+				@include font-size(($template-option-font-size * $mixin-size) / 1.6, false);
+			} @else if $mixin-heading == jumbo {
+				@include font-size(($template-option-font-size * $mixin-size) / 1.4, false);
+			} @else if $mixin-heading == hero {
+				@include font-size(($template-option-font-size * $mixin-size) / 1.2, false);
+			} @else {
+				@include font-size(($template-option-font-size * $mixin-size), false);
+			}
 
       @media (min-width: $template-option-major-breakpoint) {
         @include font-size($template-option-font-size * $mixin-size, false);
