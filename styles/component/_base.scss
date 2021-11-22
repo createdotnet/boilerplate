@@ -1,29 +1,37 @@
-
 // Base Document styles / resets
 
 html {
-	// On html, not body because background images are applied to html. Odd
+  // On html, not body because background images are applied to html. Odd
 
-	// NOTE Tested and should be fine not having this for 165 theme
-	// background-color: colour(page_background);
-	// color: colour(content_text);
-	font-size: $template-option-font-size;
-	line-height: $template-option-line-height;
+  // NOTE Tested and should be fine not having this for 165 theme
+  // background-color: colour(page_background);
+  // color: colour(content_text);
+  font-size: $template-option-font-size;
+  line-height: $template-option-line-height;
 }
-
 
 body {
-	margin: 0;
-}
+  margin: 0;
 
+  &.font-size--small {
+    font-size: 14px;
+  }
+
+  &.font-size--med {
+    font-size: 16px;
+  }
+
+  &.font-size--lrg {
+    font-size: 18px;
+  }
+}
 
 a {
-	color: colour(link_text);
+  color: colour(link_text);
 }
 
-
 p {
-	// We only apply margins to the bottom of elements, it makes a consitent vertical rhythm easier to achieve.
-	// Override browser defaults
-	margin-top: 0;
+  // We only apply margins to the bottom of elements, it makes a consitent vertical rhythm easier to achieve.
+  // Override browser defaults
+  margin-top: 0;
 }
