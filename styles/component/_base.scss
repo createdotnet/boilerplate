@@ -8,10 +8,6 @@ html {
   // color: colour(content_text);
   font-size: $template-option-font-size;
   line-height: $template-option-line-height;
-}
-
-body {
-  margin: 0;
 
   &.font-size--small {
     font-size: 14px;
@@ -24,6 +20,10 @@ body {
   &.font-size--lrg {
     font-size: 18px;
   }
+}
+
+body {
+  margin: 0;
 }
 
 a {
